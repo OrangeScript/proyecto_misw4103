@@ -1,7 +1,7 @@
 Feature: Create post
 
 @user1 @web
-Scenario: Create Post Scenario 
+Scenario: As an Admin user I want  to create a post 
       Given I navigate to page "<LOGIN_URL>"
       And I wait for 3 seconds
       When I enter email "<EMAIL>"
