@@ -6,39 +6,40 @@ Scenario: Edit an existing post with changed title only
   Given I login to Ghost
   And there is an existing post that is published
   When I navigate to the post edit page
-  And I update the title to "My New Title"
+  And I update the title to "$name1"
   And I click the update button
   Then I should see a confirmation message
-  And the post title should be "My New Title"
+  And the post title should be "$$name1"
 
 @web @user2
 Scenario: Edit a post with changed content only
   Given I login to Ghost
   And there is an existing post that is published
   When I navigate to the post edit page
-  And I update the content to "This is my updated post content"
+  And I update the content to "$name2"
   And I click the save button
-  Then I should see a success message
-  And the post should be updated with the new content
+  Then I should see a confirmation message
+  And the post content should be "$$name2"
 
 @web @user3
 Scenario: Edit a post with changed title and content
   Given I login to Ghost
   And there is an existing post that is published
   When I navigate to the post edit page
-  And I update the title to "My New Title"
-  And I update the content to "This is my updated post content"
+  And I update the title to "$name3"
+  And I update the content to "$name4"
   And I click the save button
-  Then I should see a success message
-  And the post should be updated with the new title and content
+  Then I should see a confirmation message
+  And the post title should be "$$name3"
+  And the post content should be "$$name4"
 
 @web @user4
 Scenario: Edit a post, keeping the original title and content unchanged
   Given I login to Ghost
   And there is an existing post that is published
   When I navigate to the post edit page
-  And I click the save button without making any changes
-  Then I should see a success message
+  And I don't make any changes
+  Then the update button should be disabled
   And the post should remain unchanged with the original title and content
 
 @web @user5
@@ -46,8 +47,7 @@ Scenario: Edit a post, then revert the changes
   Given I login to Ghost
   And there is an existing post that is published
   When I navigate to the post edit page
-  And I update the title to "My New Title"
-  And I update the content to "This is my updated post content"
-  And I click the cancel button
-  Then I should see a confirmation message
-  And the post should remain unchanged
+  And I update the title to "$name5"
+  And I update the content to "$name6"
+  And I click the leave button
+  Then the post should remain unchanged

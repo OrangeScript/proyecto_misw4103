@@ -27,7 +27,7 @@ When('I navigate to the post edit page', async function() {
   await postsPage.navigateToPostEditPage();
 });
 
-When('I update the title to {string}', async function(newTitle) {
+When('I update the title to {kraken-string}', async function(newTitle) {
   const editorPage = new PostEditorPage(this.driver);
   await editorPage.editPostTitle(newTitle);
 });
@@ -44,7 +44,7 @@ Then('I should see a confirmation message', async function() {
   expect(isConfirmationDisplayed).to.equal(true);
 });
 
-Then('the post title should be {string}', async function(expectedTitle) {
+Then('the post title should be {kraken-string}', async function(expectedTitle) {
   const editorPage = new PostEditorPage(this.driver);
   const actualTitle = await editorPage.checkPostTitle();
 
