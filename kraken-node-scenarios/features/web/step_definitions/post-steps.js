@@ -62,3 +62,52 @@ Then('I enter to a post', async function(){
     console.log('No posts')
   }
 });
+
+When('I click in the add button', async function(){
+  let element = await this.driver.$('button[aria-label="Add a card"]');
+  await element.waitForExist({ timeout: 5000 });
+  return await element.click();
+});
+
+When('I click in the toggle menu option', async function(){
+  let element = await this.driver.$('button[data-kg-card-menu-item="Toggle"]');
+  await element.waitForExist({ timeout: 5000 });
+  return await element.click();
+});
+
+When('I click in the header toggle', async function(){
+  let element = await this.driver.$('.koenig-lexical.koenig-lexical-heading > div > div > p');
+  return await element.click();
+});
+
+When('I write the header content {string}', async function(headerContent) {
+  let element = await this.driver.$('.koenig-lexical.koenig-lexical-heading > div > div > p');
+  return await element.setValue(headerContent);
+});
+
+When('I click in the collapsible toggle', async function(){
+  let element = await this.driver.$('.koenig-lexical.text-xl > div > div > p');
+  return await element.click();
+});
+
+When('I write the collapsible content {string}', async function(collapsibleContent) {
+  let element = await this.driver.$('.koenig-lexical.text-xl > div > div > p');
+  return await element.setValue(collapsibleContent);
+});
+
+When('I select the bookmark option', async function(){
+  let element = await this.driver.$('button[data-kg-card-menu-item="Bookmark"]');
+  return await element.click();
+});
+
+When('I write the anchor {string}', async function(url){
+  let element = await this.driver.$('input[data-testid="bookmark-url"]');
+  await element.setValue(url);
+  return await this.driver.keys('Enter');
+});
+
+When('I click into the post body', async function(){
+  let element = await this.driver.$('p[data-koenig-dnd-droppable=true]');
+  return await element.click();
+})
+
