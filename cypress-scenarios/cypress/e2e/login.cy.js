@@ -1,68 +1,100 @@
-//import credentials from '../fixtures/credentials.json'
+import Login from "../pages/login"
 
-const credentials = {
-    url: "http://localhost:2368/ghost/#/signin",
-    email: "hi@imdiego.dev",
-    password: "holamundo123",
-    badEmail: "bad@email.dev",
-    badPassword: "badPassword",
-    url_afteLoggin: "http://localhost:2368/ghost/#/dashboard" 
-}
 
 describe('Testing basic Login', () => {
-    beforeEach(()=>{
-       cy.visit(credentials.url)
-       cy.wait(7000)
 
-       //cy.fixture('credentials').then(function (data) {
-       // this.data = data;
-       //})
+    beforeEach(()=>{
+        cy.fixture('index.json').then((index) => {
+
+            let urls = index.urls
+
+            cy.visit(urls.singin_url)
+            cy.wait(7000)
+            cy.url().should('eq', urls.singin_url)
+        })  
     })
+
     it('Login with correct credentials', ()=>{
-        cy.get('form').within(() => {
-            cy.fixture('index.json').then((locators) => {
-                cy.get(locators.email_input).type(credentials.email);
-                cy.get(locators.password_input).type(credentials.password);
-                cy.get(locators.login_button).click();
-                cy.wait(1000);
-                cy.url().should('eq', credentials.url_afteLoggin);
-            });
+
+        const ln = new Login();
+
+        cy.fixture('index.json').then((index) => {
+
+            let urls = index.urls
+            let credentials = index.credentials
+            let locators = index.locators
+
+            cy.get('form').within(() => {
+                ln.setUserName(locators.email_input, credentials.email)
+                ln.setPassword(locators.password_input, credentials.password)
+                ln.clickLogin(locators.login_button)
+                cy.wait(2000)
+                ln.verifyLogin(urls.dashboard_url)
+            })
+
         })
     })
 
     it('Login with bad username', ()=>{
-        cy.get('form').within(() => {
-            cy.fixture('index.json').then((locators) => {
-                cy.get(locators.email_input).type(credentials.badEmail);
-                cy.get(locators.password_input).type(credentials.password);
-                cy.get(locators.login_button).click();
-                cy.wait(1000);
-                cy.url().should('eq', credentials.url);
-            });
+
+        const ln = new Login();
+
+        cy.fixture('index.json').then((index) => {
+
+            let urls = index.urls
+            let credentials = index.credentials
+            let locators = index.locators
+
+            cy.get('form').within(() => {
+                ln.setUserName(locators.email_input, credentials.bad_email)
+                ln.setPassword(locators.password_input, credentials.password)
+                ln.clickLogin(locators.login_button)
+                cy.wait(2000)
+                ln.verifyLogin(urls.singin_url)
+            })
+
         })
     })
 
     it('Login with bad password', ()=>{
-        cy.get('form').within(() => {
-            cy.fixture('index.json').then((locators) => {
-                cy.get(locators.email_input).type(credentials.email);
-                cy.get(locators.password_input).type(credentials.badPassword);
-                cy.get(locators.login_button).click();
-                cy.wait(1000);
-                cy.url().should('eq', credentials.url);
-            });
+        
+        const ln = new Login();
+
+        cy.fixture('index.json').then((index) => {
+
+            let urls = index.urls
+            let credentials = index.credentials
+            let locators = index.locators
+
+            cy.get('form').within(() => {
+                ln.setUserName(locators.email_input, credentials.email)
+                ln.setPassword(locators.password_input, credentials.bad_password)
+                ln.clickLogin(locators.login_button)
+                cy.wait(2000)
+                ln.verifyLogin(urls.singin_url)
+            })
+
         })
     })
 
     it('Login with bad credentials', ()=>{
-        cy.get('form').within(() => {
-            cy.fixture('index.json').then((locators) => {
-                cy.get(locators.email_input).type(credentials.badEmail);
-                cy.get(locators.password_input).type(credentials.badPassword);
-                cy.get(locators.login_button).click();
-                cy.wait(1000);
-                cy.url().should('eq', credentials.url);
-            });
+
+        const ln = new Login();
+
+        cy.fixture('index.json').then((index) => {
+
+            let urls = index.urls
+            let credentials = index.credentials
+            let locators = index.locators
+
+            cy.get('form').within(() => {
+                ln.setUserName(locators.email_input, credentials.bad_email)
+                ln.setPassword(locators.password_input, credentials.bad_password)
+                ln.clickLogin(locators.login_button)
+                cy.wait(2000)
+                ln.verifyLogin(urls.singin_url)
+            })
+
         })
     })
   })
