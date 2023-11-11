@@ -1,7 +1,9 @@
 {
     "credentials": {
         "email": "hi@imdiego.dev",
-        "password": "holamundo123"
+        "password": "holamundo123",
+        "bad_email": "bad@email.dev",
+        "bad_password": "badpassword"
     },
 
     "urls" : {
@@ -29,5 +31,4 @@
         "post_settings_header": "Post settings",
         "pop_up_delete_header": "Are you sure you want to delete this post?"
     }
-    
 }
