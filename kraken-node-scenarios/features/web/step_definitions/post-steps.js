@@ -47,6 +47,22 @@ Then('I see the post bookmark confirmation', async function(){
   expect(element.length > 0).to.equal(true);
 });
 
+Then('I click on posts', async function(){
+  let element = await this.driver.$('a[data-test-nav="posts"]');
+  return await element.click();
+});
+
+Then('I enter to a post', async function(){
+  let elements = await this.driver.$$('.gh-posts-list-item-group');
+//  return await elements.click();
+  if (elements.length > 0) {
+    let firstElement = elements[0]
+    return await firstElement.click();
+  } else {
+    console.log('No posts')
+  }
+});
+
 When('I click in the add button', async function(){
   let element = await this.driver.$('button[aria-label="Add a card"]');
   await element.waitForExist({ timeout: 5000 });
@@ -94,7 +110,4 @@ When('I click into the post body', async function(){
   let element = await this.driver.$('p[data-koenig-dnd-droppable=true]');
   return await element.click();
 })
-
-
-
 
