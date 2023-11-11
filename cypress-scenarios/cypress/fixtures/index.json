@@ -4,7 +4,6 @@
         "password": "holamundo123",
         "bad_email": "bad@email.dev",
         "bad_password": "badpassword"
-
     },
 
     "urls" : {

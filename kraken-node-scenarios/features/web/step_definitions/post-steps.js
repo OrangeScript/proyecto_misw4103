@@ -47,3 +47,18 @@ Then('I see the post bookmark confirmation', async function(){
   expect(element.length > 0).to.equal(true);
 });
 
+Then('I click on posts', async function(){
+  let element = await this.driver.$('a[data-test-nav="posts"]');
+  return await element.click();
+});
+
+Then('I enter to a post', async function(){
+  let elements = await this.driver.$$('.gh-posts-list-item-group');
+//  return await elements.click();
+  if (elements.length > 0) {
+    let firstElement = elements[0]
+    return await firstElement.click();
+  } else {
+    console.log('No posts')
+  }
+});
