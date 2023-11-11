@@ -1,0 +1,5 @@
+{
+    "email_input": "input.gh-input.email",
+    "password_input": "input.gh-input.password",
+    "login_button": "button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.ember-view"
+}
