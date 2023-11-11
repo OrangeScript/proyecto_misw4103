@@ -57,5 +57,20 @@ class EditorPage {
     return contentText;
   }
 
+  async isUpdateButtonDisabled() {
+    const updateButton = await this.driver.$('[data-test-button="publish-save"]');
+
+    const isDisabled = await updateButton.getAttribute('disabled');
+    return isDisabled !== null;
+  }
+
+  async clickLeaveButton() {
+    const postsLink = await this.driver.$('a[data-test-link="posts"]');
+    await postsLink.click();
+
+    const leaveButton = await this.driver.$('button.gh-btn-red');
+    await leaveButton.click();
+  }
+
 }
 module.exports = EditorPage;
