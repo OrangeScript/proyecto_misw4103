@@ -38,9 +38,10 @@ Scenario: Edit a post, keeping the original title and content unchanged
   Given I login to Ghost
   And there is an existing post that is published
   When I navigate to the post edit page
-  And I don't make any changes
+  And I make no changes
   Then the update button should be disabled
-  And the post should remain unchanged with the original title and content
+  And the post title should be the same
+  And the post content should be the same
 
 @web @user5
 Scenario: Edit a post, then revert the changes
@@ -50,4 +51,5 @@ Scenario: Edit a post, then revert the changes
   And I update the title to "$name5"
   And I update the content to "$name6"
   And I click the leave button
-  Then the post should remain unchanged
+  Then the post title should be the same
+  And the post content should be the same
