@@ -47,3 +47,50 @@ Then('I see the post bookmark confirmation', async function(){
   expect(element.length > 0).to.equal(true);
 });
 
+Then('I click on posts', async function(){
+  let element = await this.driver.$('a[data-test-nav="posts"]');
+  return await element.click();
+});
+
+Then('I enter to a post', async function(){
+  let elements = await this.driver.$$('.gh-posts-list-item-group');
+//  return await elements.click();
+  if (elements.length > 0) {
+    let firstElement = elements[0]
+    return await firstElement.click();
+  } else {
+    console.log('No posts')
+  }
+});
+
+Then('I open side menu', async function(){
+  let element = await this.driver.$('button[title="Settings"]');
+  return await element.click();
+});
+
+Then('I click delete post', async function(){
+  let element = await this.driver.$('.settings-menu-delete-button > button');
+  return await element.click();
+});
+
+Then('I click delete button', async function(){
+    let buttons = await this.driver.$$('.modal-content > .modal-footer > button');
+
+    if (buttons.length > 0) {
+      let deleteButton = buttons[1]
+      return await deleteButton.click();
+    } else {
+      console.log('No posts')
+    }
+  });
+
+Then('I click cancel button', async function(){
+    let buttons = await this.driver.$$('.modal-content > .modal-footer > button');
+
+    if (buttons.length > 0) {
+      let deleteButton = buttons[0]
+      return await deleteButton.click();
+    } else {
+      console.log('No posts')
+    }
+  });
