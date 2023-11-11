@@ -12,6 +12,17 @@ class EditorPage {
     
   }
 
+  async editPostContent(newContent) {
+    let contentArea = await this.driver.$('p[data-koenig-dnd-droppable=true]');
+
+    if (contentArea) {
+      await contentArea.click();
+      await contentArea.keys(['Control', 'a']);
+      await contentArea.keys('Backspace')
+      await contentArea.setValue(newContent);
+    }
+  }
+
   async clickUpdateButton() {
     let updateButton = await this.driver.$('button[data-test-button="publish-save"]');
     await updateButton.click();
@@ -37,6 +48,13 @@ class EditorPage {
     let titleText = await titleArea.getValue();
     return titleText;
 
+  }
+
+  async checkPostContent() {
+    let contentArea = await this.driver.$('p[data-koenig-dnd-droppable=true]');
+    await contentArea.click();
+    let contentText = await contentArea.getText();
+    return contentText;
   }
 
 }
