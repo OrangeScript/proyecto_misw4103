@@ -1,0 +1,33 @@
+{
+    "credentials": {
+        "email": "hi@imdiego.dev",
+        "password": "holamundo123"
+    },
+
+    "urls" : {
+        "singin_url": "http://localhost:2368/ghost/#/signin",
+        "dashboard_url": "http://localhost:2368/ghost/#/dashboard",
+        "post_url": "http://localhost:2368/ghost/#/posts",
+        "edit_post_url": "http://localhost:2368/ghost/#/editor/post/"
+    },
+
+    "locators": {
+        "email_input": "input.gh-input.email",
+        "password_input": "input.gh-input.password",
+        "login_button": "button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.ember-view",
+        "posts_navigation": "a[data-test-nav='posts']",
+        "first_post": "h3.gh-content-entry-title",
+        "post_settings_menu_button": "button.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon",
+        "post_settings_header": "div.settings-menu-header",
+        "delete_post_button": "button.gh-btn.gh-btn-outline.gh-btn-icon.gh-btn-fullwidth",
+        "delete_post_verification_header": "h1",
+        "delete_confirmation_button": "button.gh-btn.gh-btn-red.gh-btn-icon.ember-view",
+        "cancel_delete_button": "button.gh-btn"
+    },
+
+    "text_validation": {
+        "post_settings_header": "Post settings",
+        "pop_up_delete_header": "Are you sure you want to delete this post?"
+    }
+    
+}
