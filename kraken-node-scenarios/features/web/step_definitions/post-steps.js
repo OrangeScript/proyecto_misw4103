@@ -79,5 +79,22 @@ When('I write the collapsible content {string}', async function(collapsibleConte
   return await element.setValue(collapsibleContent);
 });
 
+When('I select the bookmark option', async function(){
+  let element = await this.driver.$('button[data-kg-card-menu-item="Bookmark"]');
+  return await element.click();
+});
+
+When('I write the anchor {string}', async function(url){
+  let element = await this.driver.$('input[data-testid="bookmark-url"]');
+  await element.setValue(url);
+  return await this.driver.keys('Enter');
+});
+
+When('I click into the post body', async function(){
+  let element = await this.driver.$('p[data-koenig-dnd-droppable=true]');
+  return await element.click();
+})
+
+
 
 
