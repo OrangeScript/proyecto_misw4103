@@ -7,9 +7,9 @@ Scenario: Edit an existing post with changed title only
   And there is an existing post that is published
   When I navigate to the post edit page
   And I update the title to "My New Title"
-  And I click the save button
-  Then I should see a success message
-  And the post should be updated with the new title
+  And I click the update button
+  Then I should see a confirmation message
+  And the post title should be "My New Title"
 
 @web @user2
 Scenario: Edit a post with changed content only

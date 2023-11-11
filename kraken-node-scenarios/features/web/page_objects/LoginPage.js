@@ -12,7 +12,11 @@ class LoginPage {
     await this.driver.url('http://localhost:2368/ghost/#/signin');
   }
 
-  async login(username, password) {
+  async login() {
+
+    const username = "s.buritica@uniandes.edu.co"
+    const password = "KYP6fLWKR5cef2d@N4Ym"
+    
     await this.open();
 
     const usernameInput = await this.driver.$(this.usernameInput);
