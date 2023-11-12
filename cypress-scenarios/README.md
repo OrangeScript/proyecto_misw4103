@@ -50,7 +50,7 @@ cypress open
       7.- Seleccionar el navegador (en este caso Chrome)
       8.- Dar clic en el boton Start E2E Testing in Chrome
       9.- Aparece nuestros archivos specs y damos clic sobre la prueba que deseamos ejecutar y damos click
-      10.- En seguida veremos la ejecución de los eventos aleatorios.
+      10.- En seguida veremos la ejecución de los eventos y resultados.
 
 B. A través de la linea de comandos siguiendo los pasos a continuación:
       
