@@ -43,6 +43,49 @@ class Post
         cy.get(locator).first().click()
     }
 
-}
+    getPublishedPost(locator) {
+        cy.get(locator).first().click()
+    }
 
+    editPostTitle(locator, newTitle) {
+        cy.get(locator).clear()
+        cy.get(locator).type(newTitle);
+    }
+
+    clickUpdateButton(locator) {
+        cy.get(locator).click()
+    }
+
+    verifyUpdatePopUp(locator) {
+        const titleElement = `${locator} .gh-notification-title`;
+        cy.get(locator).should('exist')
+
+        const titleText = cy.get(titleElement).invoke('text');
+
+        return titleText === 'Updated';
+    }
+
+    checkPostTitle(locator) {
+        return cy.get(locator).invoke('val')
+    }
+
+    editPostContent(locator, newContent) {
+        cy.get(locator).clear()
+        cy.get(locator).type(newContent);
+    }
+
+    checkPostContent(locator) {
+        return cy.get(locator).invoke('val')
+    }
+
+    isUpdateButtonDisabled(locator) {
+        return cy.get(locator).should('be.disabled')
+    }
+
+    clickLeaveButton(locator) {
+        cy.get("a[data-test-link='posts']").click()
+        cy.get(locator).click();
+    }
+
+}
 export default Post
