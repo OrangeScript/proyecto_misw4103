@@ -24,7 +24,7 @@
         "post_title": "textarea[data-test-editor-title-input]",
         "post_content": "p[data-koenig-dnd-droppable=true]",
         "updated_notification": ".gh-notification-passive",
-        "leave_editing_button": "button.gh-btn.gh-btn-red",
+        "leave_editing_button": ".modal-footer .gh-btn-red",
         "post_settings_menu_button": "button.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon",
         "post_settings_header": "div.settings-menu-header",
         "delete_post_button": "button.gh-btn.gh-btn-outline.gh-btn-icon.gh-btn-fullwidth",

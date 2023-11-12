@@ -43,7 +43,7 @@ describe('Testing editing posts', () => {
         
     })
 
-/*     it('Change Published Post Title', ()=>{
+    it('Change Published Post Title', ()=>{
 
         const pt = new Post();
         
@@ -203,7 +203,7 @@ describe('Testing editing posts', () => {
 
         });
 
-    }) */
+    })
 
     it('Edit A Post, Then Revert Changes', ()=>{
 
@@ -233,13 +233,14 @@ describe('Testing editing posts', () => {
                 cy.wait(1000)
             })
             
-            //Then
-            cy.get('main').within(() => {
+            cy.get('html').within(() => {
                 pt.clickLeaveButton(locators.leave_editing_button)
                 cy.wait(1000)
             })
 
+            //Then
             cy.get('main').within(() => {
+                pt.getPublishedPost(locators.published_post)
                 const postActualTitle = pt.checkPostTitle(locators.post_title)
                 return postActualTitle === NoChangesTitle
             })

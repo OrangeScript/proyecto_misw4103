@@ -84,9 +84,7 @@ class Post
 
     clickLeaveButton(locator) {
         cy.get("a[data-test-link='posts']").click()
-        cy.get("div.modal-content").within(() => {
-            cy.get(locator).click()
-        })
+        cy.get(locator).click();
     }
 
 }
