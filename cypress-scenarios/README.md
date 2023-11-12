@@ -39,7 +39,10 @@ A continuación las formas de ejecutar el código:
 A. A través de la interfaz gráfica de Cypress siguiendo los pasos continuación:
       
       1.- Bajar el proyecto de Github y estando dentro del directorio de este proyecto
-      2.- Abrir una terminal de consola de comandos y teclear ```cypress open```
+      2.- Abrir una terminal de consola de comandos y teclear:
+```bash
+cypress open
+```
       3.- Una vez que abre la pantalla principal de Projects dar clic en el boton  + Add project
       4.- Arrastrar la carpeta del proyecto que bajamos o bién navegar manualmente hasta agregar dicho directorio.
       5.- Una vez que se agrega el proyecto dar clic sobre el mismo
