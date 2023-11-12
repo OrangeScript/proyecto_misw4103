@@ -19,7 +19,7 @@ En la carpeta de cada herramienta, se especifican los requisitos e instrucciones
 ### Funcionalidades Semana 5 - Ghost 5.71.2 (20 escenarios por herramienta)
 
 - [Instrucciones Kraken](https://github.com/OrangeScript/proyecto_misw4103/tree/main/kraken-node-scenarios)
-- [Instrucciones Cypress](https://github.com/OrangeScript/proyecto_misw4103)
+- [Instrucciones Cypress](https://github.com/OrangeScript/proyecto_misw4103/tree/main/cypress-scenarios)
 
 ### Ventajas y desventajas de herramientas escogidas:
 
