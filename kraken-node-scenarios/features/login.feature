@@ -4,13 +4,13 @@ Feature: Login
 Scenario: Correct Login Scenario 
       Given I navigate to page "<LOGIN_URL>"
       And I wait for 3 seconds
-      When I enter email "<EMAIL>"
+      And I enter email "<EMAIL>"
       And I wait for 2 seconds
       And I enter password "<PASSWORD>"
       And I wait for 2 seconds
       And I click login
       And I wait for 2 seconds
-
+      Then I check dashboard URL
 
 @user2 @web
 Scenario: Login Bad password Scenario
@@ -22,7 +22,7 @@ Scenario: Login Bad password Scenario
       And I wait for 2 seconds
       And I click login
       And I wait for 2 seconds
-
+      Then I get retry button
 
 @user3 @web
 Scenario: Login Bad user Scenario
@@ -34,6 +34,7 @@ Scenario: Login Bad user Scenario
       And I wait for 2 seconds
       And I click login
       And I wait for 2 seconds
+      Then I get retry button
 
 @user4 @web
 Scenario: Login Bad credentials Scenario
@@ -45,3 +46,4 @@ Scenario: Login Bad credentials Scenario
       And I wait for 2 seconds
       And I click login
       And I wait for 2 seconds
+      Then I get retry button
