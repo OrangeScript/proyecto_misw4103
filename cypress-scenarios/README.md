@@ -37,6 +37,7 @@ npm install -g cypress
 A continuación las formas de ejecutar el código:
 
 A. A través de la interfaz gráfica de Cypress siguiendo los pasos continuación:
+      
       1.- Bajar el proyecto de Github y estando dentro del directorio de este proyecto
       2.- Abrir una terminal de consola de comandos y teclear ```cypress open```
       3.- Una vez que abre la pantalla principal de Projects dar clic en el boton  + Add project
