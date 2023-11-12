@@ -34,17 +34,20 @@ npm install kraken-node -g
 ```
 
 _Fuente: [Cómo utilizar la herramienta kraken](https://thesoftwaredesignlab.github.io/AutTestingCodelabs/kraken-web-testing-tool/index.html#2) de Software Design Lab_
+
 **Instalación del proyecto**
 
-1. Instale las siguientes dependendencias dentro la carpeta "Kraken"
+1. Instale las siguientes dependendencias dentro la carpeta "Kraken".
 
 ```bash
 npm install chai
 ```
 
-2. Exporte en PATH (Linux) o incluya en el PATH de las varables de entorno (Windows) la ruta bin del SDK de Android, sobre todo el directorio platform-tools
+2. Exporte en PATH (Linux) o incluya en el PATH de las variables de entorno (Windows) la ruta bin del SDK de Android, sobre todo el directorio platform-tools.
 
-_Nota: Si es conocida la ruta de instalación del SDK de Android, abra Android Studio e ingrese a File > Settings, en la seccion Languages & Frameworks seleccione la subsección Android SDK. Allí encontrará la ruta donde se encuentra instalado el SDK en el campo Android SDK Location._ 3. Dentro de la carpeta Kraken de este proyecto, encontrará el archivo _properties.json_, reemplace en este archivo los valores de las propiedades _EMAIL_, _PASSWORD_, _LOGIN_URL_ y _GHOST_VERSION_ con el usuario, contraseña, url y version de ghost que tiene en su máquina.
+_Nota: Si es conocida la ruta de instalación del SDK de Android, abra Android Studio e ingrese a File > Settings, en la seccion Languages & Frameworks seleccione la subsección Android SDK. Allí encontrará la ruta donde se encuentra instalado el SDK en el campo Android SDK Location._ 
+
+3. Dentro de la carpeta Kraken de este proyecto, encontrará el archivo _properties.json_, reemplace en este archivo los valores de las propiedades _EMAIL_, _PASSWORD_, _LOGIN_URL_ y _GHOST_VERSION_ con el usuario, contraseña, url y version de ghost que tiene en su máquina.
 
 ## Ejecución
 
