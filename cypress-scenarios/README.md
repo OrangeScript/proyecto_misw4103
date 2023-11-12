@@ -53,9 +53,12 @@ cypress open
       10.- En seguida veremos la ejecución de los eventos aleatorios.
 
 B. A través de la linea de comandos siguiendo los pasos a continuación:
-
+      
       1.- Bajar el proyecto de Github y estando dentro del directorio de este proyecto
       2.- Abrir una terminal de consola de comandos.
       3.- Colocarnos hasta el directorio que descomprimimos
-      4.- Ejecutar el comando ```cypress run --headless```
+      4.- Ejecutar el comando:
+```bash
+cypress run --headless
+```      
       5.- En seguida veremos los resultados de la ejecución así como los pantallazos.
