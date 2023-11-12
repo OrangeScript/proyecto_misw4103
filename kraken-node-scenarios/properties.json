@@ -1,6 +1,6 @@
 {
-    "EMAIL": "hi@imdiego.dev",
-    "PASSWORD": "holamundo123",
-    "LOGIN_URL": "http://localhost:2368/ghost/#/signin",
-    "GHOST_VERSION": "5.71.2"
-  }
+  "EMAIL": "js.calderonb12@uniandes.edu.co",
+  "PASSWORD": "Sanpaoli140599@",
+  "LOGIN_URL": "http://localhost:2370/ghost/#/signin",
+  "GHOST_VERSION": "5.71.2"
+}

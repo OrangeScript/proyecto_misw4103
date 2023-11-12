@@ -2,16 +2,10 @@ Feature: Create post
 
 @user1 @web
 Scenario: Scenario1: As an Admin user, I want  to create a post 
-      Given I navigate to page "<LOGIN_URL>"
-      And I wait for 3 seconds
-      When I enter email "<EMAIL>"
-      And I wait for 2 seconds
-      And I enter password "<PASSWORD>"
-      And I wait for 2 seconds
-      And I click login
+      Given I login to Ghost
       And I wait for 2 seconds
       And I click new post
-      And I wait
+      And I wait for 2 seconds
       And I write post title "My post title"
       And I wait for 2 seconds
       And I click post content text
@@ -27,13 +21,7 @@ Scenario: Scenario1: As an Admin user, I want  to create a post
 
 @user2 @web
 Scenario: Scenario2: As an Admin user, I want  to create a post with toggle
-      Given I navigate to page "<LOGIN_URL>"
-      And I wait for 3 seconds
-      When I enter email "<EMAIL>"
-      And I wait for 2 seconds
-      And I enter password "<PASSWORD>"
-      And I wait for 2 seconds
-      And I click login
+      Given I login to Ghost
       And I wait for 2 seconds
       And I click new post
       And I wait for 1 seconds
@@ -63,13 +51,7 @@ Scenario: Scenario2: As an Admin user, I want  to create a post with toggle
 
 @user3 @web
 Scenario: Scenario3: As an Admin user, I want to create a post with a bookmark
-      Given I navigate to page "<LOGIN_URL>"
-      And I wait for 3 seconds
-      When I enter email "<EMAIL>"
-      And I wait for 2 seconds
-      And I enter password "<PASSWORD>"
-      And I wait for 2 seconds
-      And I click login
+      Given I login to Ghost
       And I wait for 2 seconds
       And I click new post
       And I wait for 1 seconds

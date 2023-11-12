@@ -2,13 +2,7 @@ Feature: Delete post
 
 @user1 @web
 Scenario: Delete excisting Post Scenario 
-      Given I navigate to page "<LOGIN_URL>"
-      And I wait for 3 seconds
-      When I enter email "<EMAIL>"
-      And I wait for 2 seconds
-      And I enter password "<PASSWORD>"
-      And I wait for 2 seconds
-      And I click login
+      Given I login to Ghost
       And I wait for 2 seconds
       And I click on posts
       And I wait for 2 seconds
@@ -23,14 +17,7 @@ Scenario: Delete excisting Post Scenario
 
 @user2 @web
 Scenario: Cancele Delete excisting Post Scenario 
-      Given I navigate to page "<LOGIN_URL>"
-      And I wait for 3 seconds
-      When I enter email "<EMAIL>"
-      And I wait for 2 seconds
-      And I enter password "<PASSWORD>"
-      And I wait for 2 seconds
-      And I click login
-      And I wait for 2 seconds
+      Given I login to Ghost
       And I click on posts
       And I wait for 2 seconds
       And I enter to a post
