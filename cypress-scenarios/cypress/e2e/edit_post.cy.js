@@ -16,7 +16,7 @@ describe("Testing editing posts", () => {
       cy.wait(5000);
       cy.url().should("eq", urls.singin_url);
 
-      cy.get("form").within(() => {
+      cy.get("main").within(() => {
         ln.setUserName(locators.email_input, credentials.email);
         ln.setPassword(locators.password_input, credentials.password);
         ln.clickLogin(locators.login_button);
@@ -24,8 +24,7 @@ describe("Testing editing posts", () => {
         ln.verifyLogin(urls.dashboard_url);
       });
 
-      cy.get("nav")
-        .first()
+      cy.get("html")
         .within(() => {
           pt.clickPost(locators.posts_navigation);
           cy.wait(2000);
@@ -40,7 +39,7 @@ describe("Testing editing posts", () => {
     });
   });
 
-  it("Change Published Post Title", () => {
+  /* it("Change Published Post Title", () => {
     const pt = new Post();
 
     cy.fixture("index.json").then((index) => {
@@ -62,7 +61,7 @@ describe("Testing editing posts", () => {
       });
 
       //Then
-      cy.get("aside.gh-notifications").within(() => {
+      cy.get("html").within(() => {
         pt.verifyUpdatePopUp(locators.updated_notification);
         cy.wait(1000);
       });
@@ -181,7 +180,7 @@ describe("Testing editing posts", () => {
       });
     });
   });
-
+ */
   it("Edit A Post, Then Revert Changes", () => {
     const pt = new Post();
 

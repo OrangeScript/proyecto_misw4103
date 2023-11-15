@@ -7,6 +7,7 @@ class Post
 
     verifyPostPage(post_url)
     {
+        cy.screenshot()
         cy.url().should('contain', post_url)
     }
 
@@ -49,16 +50,17 @@ class Post
 
     editPostTitle(locator, newTitle) {
         cy.get(locator).clear()
-        cy.get(locator).type(newTitle);
+        cy.get(locator).type(newTitle).screenshot();
     }
 
     clickUpdateButton(locator) {
+        cy.screenshot()
         cy.get(locator).click()
     }
 
     verifyUpdatePopUp(locator) {
         const titleElement = `${locator} .gh-notification-title`;
-        cy.get(locator).should('exist')
+        cy.get(locator).should('exist');
 
         const titleText = cy.get(titleElement).invoke('text');
 
@@ -71,7 +73,7 @@ class Post
 
     editPostContent(locator, newContent) {
         cy.get(locator).clear()
-        cy.get(locator).type(newContent);
+        cy.get(locator).type(newContent).screenshot();
     }
 
     checkPostContent(locator) {
@@ -79,11 +81,19 @@ class Post
     }
 
     isUpdateButtonDisabled(locator) {
+        cy.screenshot()
         return cy.get(locator).should('be.disabled')
     }
 
     clickLeaveButton(locator) {
         cy.get("a[data-test-link='posts']").click()
+/*         cy.wait(1000)
+        cy.get('.ember-application').invoke('css', 'overflow', 'auto').should('be.visible')
+        cy.get('.gh-app').invoke('css', 'position', 'relative')
+        cy.get('.gh-app').invoke('css', 'overflow', 'auto').should('be.visible')
+        cy.get('.epm-modal-container').invoke('css', 'position', 'relative').should('be.visible')
+        cy.get(locator).scrollIntoView()
+        cy.screenshot(''); */
         cy.get(locator).click();
     }
 
