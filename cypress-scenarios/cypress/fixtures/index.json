@@ -16,7 +16,8 @@
         "edit_post_url": "http://localhost:2368/ghost/#/editor/post/",
 
         "tags_url": "http://localhost:2368/ghost/#/tags",
-        "new_tag_url": "http://localhost:2368/ghost/#/tags/new"
+        "new_tag_url": "http://localhost:2368/ghost/#/tags/new",
+        "internal_tags_url": "http://localhost:2368/ghost/#/tags?type=internal"
     },
 
     "locators": {
@@ -39,7 +40,12 @@
         "tag_color": "input[data-test-input='accentColor']",
         "tag_slug": "input[data-test-input='tag-slug']",
         "tag_description": "textarea[data-test-input='tag-description']",
-        "tag_save": "button[data-test-button='save']"
+        "tag_save": "button[data-test-button='save']",
+        "tag_name_error": "span.error",
+        "tags_internal": "button[data-test-tags-nav='internal']",
+        "tag_first": "h3.gh-tag-list-name",
+        "tag_delete": "button[data-test-button='delete-tag']",
+        "tag_delete_confirm": "button[data-test-button='confirm']"
     },
 
     "text_validation": {
