@@ -1,4 +1,5 @@
 import Login from "../pages/login";
+const baseUrl = Cypress.config().baseUrl;
 
 describe("Testing basic Login", () => {
   beforeEach(() => {
@@ -7,7 +8,7 @@ describe("Testing basic Login", () => {
 
       cy.visit(urls.singin_url);
       cy.wait(7000);
-      cy.url().should("eq", urls.singin_url);
+      cy.url().should("eq", baseUrl + urls.singin_url);
     });
   });
 

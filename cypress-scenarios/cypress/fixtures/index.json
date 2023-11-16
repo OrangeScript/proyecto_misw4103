@@ -1,23 +1,20 @@
 {
     "credentials": {
-
-        "email": "hi@imdiego.dev",
-        "password": "holamundo123",
+        "email": "s.menaz@uniandes.edu.co",
+        "password": "pruebas2023",
         "bad_email": "bad@email.dev",
         "bad_password": "badpassword"
     
     },
 
     "urls" : {
-        "singin_url": "http://localhost:2368/ghost/#/signin",
-        "dashboard_url": "http://localhost:2368/ghost/#/dashboard",
-
-        "post_url": "http://localhost:2368/ghost/#/posts",
-        "edit_post_url": "http://localhost:2368/ghost/#/editor/post/",
-
-        "tags_url": "http://localhost:2368/ghost/#/tags",
-        "new_tag_url": "http://localhost:2368/ghost/#/tags/new",
-        "internal_tags_url": "http://localhost:2368/ghost/#/tags?type=internal"
+        "singin_url": "/#/signin",
+        "dashboard_url": "/#/dashboard",
+        "post_url": "/#/posts",
+        "edit_post_url": "/#/posts?type=published",
+        "tags_url": "/#/tags",
+        "new_tag_url": "/#/tags/new",
+        "internal_tags_url": "/#/tags?type=internal"
     },
 
     "locators": {
@@ -27,13 +24,19 @@
         
         "posts_navigation": "a[data-test-nav='posts']",
         "first_post": "h3.gh-content-entry-title",
+        "published_post": "a[data-test-nav-custom='posts-Published']",
+        "update_button": "button[data-test-button='publish-save']",
+        "post_title": "textarea[data-test-editor-title-input]",
+        "post_content": "p[data-koenig-dnd-droppable=true]",
+        "updated_notification": ".gh-notification-passive",
+        "leave_editing_button": "button.gh-btn.gh-btn-red",
         "post_settings_menu_button": "button.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon",
         "post_settings_header": "div.settings-menu-header",
         "delete_post_button": "button.gh-btn.gh-btn-outline.gh-btn-icon.gh-btn-fullwidth",
         "delete_post_verification_header": "h1",
         "delete_confirmation_button": "button.gh-btn.gh-btn-red.gh-btn-icon.ember-view",
         "cancel_delete_button": "button.gh-btn",
-
+        "edit_first_post": "[data-test-post-id] a",
         "tags_navigation": "a[data-test-nav='tags']",
         "new_tag_button": "a[class='ember-view gh-btn gh-btn-primary']",
         "tag_name": "input[data-test-input='tag-name']",

@@ -1,3 +1,4 @@
+const baseUrl = Cypress.config().baseUrl;
 class Login
 {
     setUserName(locator, username)
@@ -15,7 +16,7 @@ class Login
     }
 
     verifyLogin(dashboard_url) {
-        cy.url().should('eq', dashboard_url)
+        cy.url().should('eq', baseUrl + dashboard_url)
     }
 }
 

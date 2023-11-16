@@ -1,6 +1,6 @@
 import Login from "../pages/login";
 import Tag from "../pages/tags";
-
+const baseUrl = Cypress.config().baseUrl;
 
 describe("Testing create a tag", () => {
     beforeEach(() => {
@@ -14,7 +14,7 @@ describe("Testing create a tag", () => {
   
         cy.visit(urls.singin_url);
         cy.wait(3000);
-        cy.url().should("eq", urls.singin_url);
+        cy.url().should("eq", baseUrl+urls.singin_url);
   
         cy.get("form").within(() => {
           ln.setUserName(locators.email_input, credentials.email);

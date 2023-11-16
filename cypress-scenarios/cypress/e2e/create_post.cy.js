@@ -1,5 +1,6 @@
 import Login from "../pages/login";
 import Post from "../pages/post";
+const baseUrl = Cypress.config().baseUrl;
 
 describe("Testing create post", () => {
   beforeEach(() => {
@@ -13,7 +14,7 @@ describe("Testing create post", () => {
 
       cy.visit(urls.singin_url);
       cy.wait(7000);
-      cy.url().should("eq", urls.singin_url);
+      cy.url().should("eq", baseUrl+urls.singin_url);
 
       cy.get("form").within(() => {
         ln.setUserName(locators.email_input, credentials.email);
@@ -23,33 +24,21 @@ describe("Testing create post", () => {
         ln.verifyLogin(urls.dashboard_url);
       });
 
-      cy.get("nav")
-        .first()
-        .within(() => {
-          pt.clickPost(locators.posts_navigation);
-          cy.wait(2000);
-          pt.verifyPostPage(urls.post_url);
-        });
-
-      cy.get("main").within(() => {
-        pt.getFirstPost(locators.first_post);
-        cy.wait(2000);
-        pt.verifyPostPage(urls.edit_post_url);
-      });
     });
   });
 
+  
   it("should not see the publish button when creating a post without title and content", () => {
-    cy.visit("/ghost");
+    cy.visit("/");
     cy.wait(1000);
     cy.get('a[data-test-nav="new-story"]').click();
     cy.get("textarea[data-test-editor-title-input]").clear();
     cy.get('p[data-koenig-dnd-droppable="true"]').clear();
-    cy.get(".gh-publish-trigger").should("not.be.visible");
+    cy.get("button[class='gh-publish-trigger']").should('not.exist');
   });
 
   it("should create a post with a button", () => {
-    cy.visit("/ghost");
+    cy.visit("/");
     cy.wait(1000);
     cy.get('a[data-test-nav="new-story"]').click();
     cy.get("textarea[data-test-editor-title-input]").type("Post with button");
@@ -75,7 +64,7 @@ describe("Testing create post", () => {
   });
 
   it("should create a post with HTML content", () => {
-    cy.visit("/ghost");
+    cy.visit("/");
     cy.wait(1000);
     cy.get('a[data-test-nav="new-story"]').click();
     cy.get("textarea[data-test-editor-title-input]").type(
@@ -102,7 +91,7 @@ describe("Testing create post", () => {
   });
 
   it("should create a post with Markdown content", () => {
-    cy.visit("/ghost");
+    cy.visit("/");
     cy.wait(1000);
     cy.get('a[data-test-nav="new-story"]').click();
     cy.get("textarea[data-test-editor-title-input]").type(
@@ -128,17 +117,17 @@ describe("Testing create post", () => {
     cy.get(".gh-publish-title").should("exist");
   });
 
-  it('should create a post using "/" shortcut for add HTML content', () => {
-    cy.visit("/ghost");
+  it('should create a post using "/" shortcut for add HTML content', async () => {
+    cy.visit("/");
     cy.wait(1000);
     cy.get('a[data-test-nav="new-story"]').click();
     cy.get("textarea[data-test-editor-title-input]").type(
       "Post with '/' shortcut"
     );
     cy.wait(2000);
-    cy.get('p[data-koenig-dnd-droppable="true"]').click();
+    cy.get('p[data-koenig-dnd-droppable=true]').click();
     cy.wait(2000);
-    cy.get('p[data-koenig-dnd-droppable="true"]').type("/");
+    cy.get('p[data-koenig-dnd-droppable=true]').type("/");
     cy.wait(2000);
     cy.get('button[data-kg-card-menu-item="HTML"]').click();
     cy.get('div[data-kg-card-editing="true"]')

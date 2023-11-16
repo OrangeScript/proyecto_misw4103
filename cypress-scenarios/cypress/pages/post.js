@@ -1,3 +1,5 @@
+const baseUrl = Cypress.config().baseUrl;
+
 class Post
 {
     clickPost(locator)
@@ -7,7 +9,7 @@ class Post
 
     verifyPostPage(post_url)
     {
-        cy.url().should('contain', post_url)
+        cy.url().should('contain', baseUrl + post_url)
     }
 
     getFirstPost(locator)
@@ -86,6 +88,12 @@ class Post
         cy.get("a[data-test-link='posts']").click()
         cy.get(locator).click();
     }
+
+    verifyPostPageWithoutBaseURL(post_url)
+    {
+        cy.url().should('contain', post_url)
+    }
+
 
 }
 export default Post
