@@ -1,5 +1,13 @@
 const { Then } = require("@cucumber/cucumber");
 
+Then("I enter to a post", async function () {
+  //const postsPage = new PostsPage(this.driver);
+  let listItem = await this.driver.$$('div.gh-posts-list-item-group');
+  console.log('--------- HERE HERE HERE ---------')
+  console.log(listItem)
+  return await listItem[0].click()
+});
+
 Then("I open side menu", async function () {
   let element = await this.driver.$('button[title="Settings"]');
   return await element.click();

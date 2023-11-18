@@ -1,6 +1,11 @@
 const { When, Then } = require("@cucumber/cucumber");
 const expect = require("chai").expect;
 
+When('I click on posts', async function () {
+  let element = await this.driver.$('a[data-test-nav="posts"]');
+  return await element.click();
+});
+
 When("I click new post", async function () {
   let element = await this.driver.$('a[data-test-nav="new-story"]');
   return await element.click();

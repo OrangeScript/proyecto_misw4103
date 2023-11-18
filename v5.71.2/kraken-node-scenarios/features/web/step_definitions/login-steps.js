@@ -1,8 +1,8 @@
 const { Given, When } = require("@cucumber/cucumber");
 
-Given("I login to Ghost", async function () {
-  await this.loginPage.login();
-});
+//Given("I login to Ghost", async function () {
+//  await this.loginPage.login();
+//});
 
 When("I enter email {kraken-string}", async function (email) {
   let element = await this.driver.$('input[name="identification"]');

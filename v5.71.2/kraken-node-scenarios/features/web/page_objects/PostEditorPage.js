@@ -71,6 +71,19 @@ class EditorPage {
       const leaveButton = await this.driver.$('button.gh-btn-red');
       await leaveButton.click();
     }
+
+    async checkPostTitleInsideList() {
+      let listTitles = await this.driver.$$('.gh-content-entry-title');
+        for (let i = 0; i < listTitles.length; i++) {
+            let titleText = await listTitles[i].getText();
+            if (titleText.includes(this.noChangeTitle)) {
+                console.log(`El elemento en la posiciĆ³n ${i} contiene el texto ${this.noChangeTitle}`);
+                return true;
+            } else {
+                return false
+            }
+        }
+    }
   
   }
   module.exports = EditorPage;
