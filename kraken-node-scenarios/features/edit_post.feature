@@ -8,6 +8,7 @@ Scenario: Edit an existing post with changed title only
   When I navigate to the post edit page
   And I update the title to "$name1"
   And I click the update button
+  And I wait for 2 seconds
   Then I should see a confirmation message
   And the post title should be "$$name1"
 
@@ -18,6 +19,7 @@ Scenario: Edit a post with changed content only
   When I navigate to the post edit page
   And I update the content to "$name2"
   And I click the update button
+  And I wait for 2 seconds
   Then I should see a confirmation message
   And the post content should be "$$name2"
 

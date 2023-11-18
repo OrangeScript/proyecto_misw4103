@@ -29,12 +29,13 @@ class EditorPage {
     }
   
     async isUpdateConfirmationDisplayed() {
-      let notification = await this.driver.$('.gh-notification-passive');
+      
+      let notificationTitle = await this.driver.$('.gh-notifications .gh-notification-title');
   
-      if (notification) {
+      if (notificationTitle) {
   
-        let titleElement = await notification.$('.gh-notification-title');
-        let titleText = await titleElement.getText();
+        //let titleElement = await notification.$('.gh-notification-title');
+        let titleText = await notificationTitle.getText();
   
         if (titleText.trim() === 'Updated') {
           return true;
@@ -68,8 +69,25 @@ class EditorPage {
       const postsLink = await this.driver.$('a[data-test-link="posts"]');
       await postsLink.click();
   
-      const leaveButton = await this.driver.$('button.gh-btn-red');
+      const leaveButton = await this.driver.$('button.gh-btn.gh-btn-red');
       await leaveButton.click();
+    }
+
+    async checkPostTitleInsideList() {
+
+      let listTitles = await this.driver.$$('.gh-content-entry-title');
+
+        for (let i = 0; i < listTitles.length; i++) {
+            let titleText = await listTitles[i].getText();
+
+            if (titleText.includes(this.noChangeTitle)) {
+                console.log(`El elemento en la posiciĆ³n ${i} contiene el texto ${this.noChangeTitle}`);
+                return true;
+            } else {
+                return false
+            }
+        }
+  
     }
   
   }
