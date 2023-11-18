@@ -16,18 +16,6 @@ class PostsPage {
       }
   
       }
-
-    async navigateToFirstPostEditPage() {
-      console.log("----- HERE HERE HERE HERE -----")
-      let listItem = await this.driver.$('li.gh-list-row gh-posts-list-item');
-      console.log("----- HERE HERE HERE HERE -----")
-      console.log(listItem)
-  
-      if (listItem) {
-          await listItem[0].click();
-      }
-  
-      }
   
   }
   module.exports = PostsPage;
