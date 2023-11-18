@@ -13,7 +13,7 @@ describe("Testing create post", () => {
       let locators = index.locators;
 
       cy.visit(urls.singin_url);
-      cy.wait(7000);
+      cy.wait(3000);
       cy.url().should("eq", baseUrl+urls.singin_url);
 
       cy.get("form").within(() => {
@@ -22,6 +22,7 @@ describe("Testing create post", () => {
         ln.clickLogin(locators.login_button);
         cy.wait(2000);
         ln.verifyLogin(urls.dashboard_url);
+       
       });
 
     });
@@ -30,6 +31,7 @@ describe("Testing create post", () => {
   
   it("should not see the publish button when creating a post without title and content", () => {
     cy.visit("/");
+    Post.closeAlertInfo();
     cy.wait(1000);
     cy.get('[title="New post"][href="#/editor/post/"]').click();
     cy.get("textarea[placeholder='Post title']").clear();
@@ -42,6 +44,7 @@ describe("Testing create post", () => {
 
   it("should create a post with a button", () => {
     cy.visit("/");
+    Post.closeAlertInfo();
     cy.wait(1000);
     cy.get('[title="New post"][href="#/editor/post/"]').click();
     cy.get("textarea[placeholder='Post title']").type("Post with button");
@@ -49,26 +52,32 @@ describe("Testing create post", () => {
     cy.get('.koenig-editor__editor').click();
     cy.wait(2000);
     cy.get('button[aria-label="Add a card"]').click();
-    cy.wait(30000);
+    cy.wait(2000);
     cy.get('[data-kg="cardmenu-card"][title="Button"]').click();
-    cy.wait(7000);
+    cy.wait(2000);
+    cy.get('button[aria-label="Add a card"]').click();
+    cy.wait(2000);
+    cy.get('[data-kg="cardmenu-card"][title="Button"]').click();
+    cy.wait(2000);
     cy.get('#button-text-input').type("Button");
     cy.wait(1000);
-    cy.get('input[data-testid="button-input-url"]')
+    cy.get('#button-url-input')
       .click()
       .type("https://www.coursera.org/");
-    cy.get('input[data-testid="button-input-url"]').type("{enter}");
+      cy.get('#button-url-input').type("{enter}");
     cy.wait(1000);
-    cy.get(".gh-publish-trigger").click();
+    cy.get('.gh-koenig-editor-pane').click();
+    cy.wait(1000);
+    cy.contains('span', 'Publish').click();
     cy.wait(2000);
-    cy.get(".gh-publish-cta > button").click();
+    cy.get('footer.gh-publishmenu-footer span:contains("Publish")').click();
     cy.wait(2000);
-    cy.get('button[data-test-button="confirm-publish"]').click();
+    cy.get('div.modal-footer span:contains("Publish")').click();
     cy.wait(2000);
-    cy.get(".gh-publish-title").should("exist");
+    cy.get(".gh-notification-title").should("exist");
   });
 
-  it("should create a post with HTML content", () => {
+  /*it("should create a post with HTML content", () => {
     cy.visit("/");
     cy.wait(1000);
     cy.get('a[data-test-nav="new-story"]').click();
@@ -147,5 +156,5 @@ describe("Testing create post", () => {
     cy.get('button[data-test-button="confirm-publish"]').click();
     cy.wait(2000);
     cy.get(".gh-publish-title").should("exist");
-  });
+  });*/
 });

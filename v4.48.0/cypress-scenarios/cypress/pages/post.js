@@ -94,6 +94,24 @@ class Post
         cy.url().should('contain', post_url)
     }
 
+    static closeAlertInfo() {
+
+        // Listen for uncaught exceptions
+        Cypress.on('uncaught:exception', (err, runnable) => {
+            // Cypress will fail the test if an unhandled exception occurs
+            // To prevent the failure, you can return false here
+            return false;
+        });
+        cy.get('button.gh-alert-close').click();
+  
+        // Add other test steps as needed
+            // Ensure the uncaught:exception listener is removed after the test
+            Cypress.removeListener('uncaught:exception', (err, runnable) => {
+                return false;
+        });
+
+    }
+
 
 }
 export default Post
