@@ -7,12 +7,12 @@ When("I click on posts", async function () {
 });
 
 When("I click new post", async function () {
-  let element = await this.driver.$('a[data-test-nav="new-story"]');
+  let element = await this.driver.$('a[href="#/editor/post/"]');
   return await element.click();
 });
 
 When("I write post title {string}", async function (textTitle) {
-  let element = await this.driver.$("textarea[data-test-editor-title-input]");
+  let element = await this.driver.$(".gh-editor-title");
   return await element.setValue(textTitle);
 });
 
@@ -33,25 +33,25 @@ When("I delete the post content", async function () {
 });
 
 When("I publish the post", async function () {
-  let element = await this.driver.$(".gh-publish-trigger");
+  let element = await this.driver.$(".gh-btn.gh-btn-editor.gh-publishmenu-trigger");
   return await element.click();
 });
 
 When("I continue to the final review", async function () {
-  let element = await this.driver.$(".gh-publish-cta > button");
+  let element = await this.driver.$(".gh-btn.gh-btn-black.gh-publishmenu-button.gh-btn-icon");
   return await element.click();
 });
 
 When("I confirm to the final post", async function () {
   let element = await this.driver.$(
-    'button[data-test-button="confirm-publish"]'
+    '.gh-btn.gh-btn-black.gh-btn-icon'
   );
   return await element.click();
 });
 
 Then("I see the post bookmark confirmation", async function () {
   //The $$ command is a short and handy way in order to fetch multiple elements on the page
-  let element = await this.driver.$$(".gh-publish-title");
+  let element = await this.driver.$$(".gh-notification-content");
   expect(element.length > 0).to.equal(true);
 });
 
@@ -62,27 +62,27 @@ When("I click in the add button", async function () {
 });
 
 When("I click in the toggle menu option", async function () {
-  let element = await this.driver.$('button[data-kg-card-menu-item="Toggle"]');
+  let element = await this.driver.$('.flex.flex-shrink-0[title="Toggle"]');
   await element.waitForExist({ timeout: 5000 });
   return await element.click();
 });
 
 When("I click in the header toggle", async function () {
   let element = await this.driver.$(
-    ".koenig-lexical.koenig-lexical-heading > div > div > p"
+    '.koenig-basic-html-input__editor'
   );
   return await element.click();
 });
 
 When("I write the header content {string}", async function (headerContent) {
   let element = await this.driver.$(
-    ".koenig-lexical.koenig-lexical-heading > div > div > p"
+    ".koenig-basic-html-input__editor"
   );
   return await element.setValue(headerContent);
 });
 
 When("I click in the collapsible toggle", async function () {
-  let element = await this.driver.$(".koenig-lexical.text-xl > div > div > p");
+  let element = await this.driver.$(".koenig-basic-html-textarea__editor");
   return await element.click();
 });
 
@@ -90,7 +90,7 @@ When(
   "I write the collapsible content {string}",
   async function (collapsibleContent) {
     let element = await this.driver.$(
-      ".koenig-lexical.text-xl > div > div > p"
+      ".koenig-basic-html-textarea__editor"
     );
     return await element.setValue(collapsibleContent);
   }
@@ -98,9 +98,13 @@ When(
 
 When("I select the bookmark option", async function () {
   let element = await this.driver.$(
-    'button[data-kg-card-menu-item="Bookmark"]'
+    '.flex.flex-shrink-0[title="Bookmark"]'
   );
-  return await element.click();
+  await element.click();
+  let element2 = await this.driver.$('button[aria-label="Add a card"]');
+  await element2.waitForExist({ timeout: 5000 });
+  await element2.click();
+  await element.click();
 });
 
 When("I select the button option", async function () {
@@ -153,7 +157,7 @@ When("I fill the Header settings", async function () {
 });
 
 When("I write the anchor {string}", async function (url) {
-  let element = await this.driver.$('input[data-testid="bookmark-url"]');
+  let element = await this.driver.$('input.miw-100.pa2.ba.br2.b--lightgrey-d2.f7.form-text.lh-title.tracked-2.h10.nl2.nr2');
   await element.setValue(url);
   return await this.driver.keys("Enter");
 });
