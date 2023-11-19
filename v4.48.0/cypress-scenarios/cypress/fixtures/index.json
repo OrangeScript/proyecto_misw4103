@@ -1,7 +1,7 @@
 {
     "credentials": {
-        "email": "hi@imdiego.dev",
-        "password": "holamundo123",
+        "email": "s.menaz@uniandes.edu.co",
+        "password": "pruebas2023",
         "bad_email": "bad@email.dev",
         "bad_password": "badpassword"
     
@@ -24,10 +24,10 @@
         
         "posts_navigation": "a[data-test-nav='posts']",
         "first_post": "h3.gh-content-entry-title",
-        "published_post": "a[href='#/posts/']",
-        "update_button": "button[data-test-button='publish-save']",
-        "post_title": "textarea[data-test-editor-title-input]",
-        "post_content": "p[data-koenig-dnd-droppable=true]",
+        "published_post": "a[title='Published'][href='#/posts/?type=published']",
+        "update_button": "span:contains('Update'):not(:has(span))",
+        "post_title": "textarea[placeholder='Post title']",
+        "post_content": ".koenig-editor__editor",
         "updated_notification": ".gh-notification-passive",
         "leave_editing_button": "button.gh-btn.gh-btn-red",
         "post_settings_menu_button": "button.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon",
@@ -36,7 +36,7 @@
         "delete_post_verification_header": "h1",
         "delete_confirmation_button": "button.gh-btn.gh-btn-red.gh-btn-icon.ember-view",
         "cancel_delete_button": "button.gh-btn",
-        "edit_first_post": "[data-test-post-id] a",
+        "edit_first_post": ".gh-post-list-title",
 
         "tags_navigation": "a[href='#/tags/']",
         "new_tag_button": "a[class='ember-view gh-btn gh-btn-primary']",
@@ -49,7 +49,9 @@
         "tags_internal": "button.gh-btn",
         "tag_first": "li.gh-list-row.gh-tags-list-item",
         "tag_delete": "button.gh-btn.gh-btn-red.gh-btn-icon",
-        "tag_delete_confirm": "button.gh-btn.gh-btn-red.gh-btn-icon.ember-view"
+        "tag_delete_confirm": "button.gh-btn.gh-btn-red.gh-btn-icon.ember-view",
+        "confirm_update_button": "footer.gh-publishmenu-footer span:contains('Update')",
+        "return_to_posts": "a:contains('Posts')"
     },
 
     "text_validation": {

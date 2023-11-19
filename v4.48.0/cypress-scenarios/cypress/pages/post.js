@@ -99,7 +99,7 @@ class Post
     }
 
     clickLeaveButton(locator) {
-        cy.get("a[data-test-link='posts']").click()
+       
         cy.get(locator).click();
         cy.screenshot()
     }
@@ -118,7 +118,7 @@ class Post
             // To prevent the failure, you can return false here
             return false;
         });
-        cy.get('button.gh-alert-close').click();
+        cy.get('button.gh-alert-close').should('exist').click();
   
         // Add other test steps as needed
             // Ensure the uncaught:exception listener is removed after the test

@@ -2,7 +2,7 @@
 En la carpeta de cada herramienta, se especifican los requisitos e instrucciones de ejecución de las pruebas.
 
 ### Herramientas
-- Cypress (GHOST 4.48.0)
+- Cypress (GHOST 4.48.8)
 
 ## Requerimientos
 
@@ -10,11 +10,11 @@ En la carpeta de cada herramienta, se especifican los requisitos e instrucciones
 |------------------|------------------|
 | NPM              | v10.2.3          |
 | Node             | 16.20.2          |
-| Ghost            | 4.48.0           |
+| Ghost            | 4.48.8           |
 | Cypress          | v13.3.2          |
 
 - Asegurese de tener instalado Ghost
-- Ghost 5.71.2 debe estar iniciado y corriendo en http://localhost:3002/ghost
+- Ghost 4.48.8 debe estar iniciado y corriendo en http://localhost:3002/ghost
 - Tener un usuario creado en su ambiente local de Ghost
 - Dentro de la carpeta de nuestro proyecto en cypress > fixtures > ``` index.json ``` ajustar las propiedades url, email y password para poder ejecutar las pruebas con las credenciales de su instalación local de Ghost
 
