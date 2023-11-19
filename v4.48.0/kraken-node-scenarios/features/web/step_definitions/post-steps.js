@@ -7,12 +7,12 @@ When("I click on posts", async function () {
 });
 
 When("I click new post", async function () {
-  let element = await this.driver.$('a[data-test-nav="new-story"]');
+  let element = await this.driver.$('a[title="New post"]');
   return await element.click();
 });
 
 When("I write post title {string}", async function (textTitle) {
-  let element = await this.driver.$("textarea[data-test-editor-title-input]");
+  let element = await this.driver.$("textarea.gh-editor-title.ember-text-area.gh-input.ember-view");
   return await element.setValue(textTitle);
 });
 
