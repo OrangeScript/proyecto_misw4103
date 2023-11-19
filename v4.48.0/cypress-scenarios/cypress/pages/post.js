@@ -5,57 +5,69 @@ class Post
     clickPost(locator)
     {
         cy.get(locator).click()
+        cy.screenshot()
     }
 
     verifyPostPage(post_url)
     {
         cy.url().should('contain', baseUrl + post_url)
+        cy.screenshot()
     }
 
     getFirstPost(locator)
     {
         cy.get(locator).first().click()
+        cy.screenshot()
     }
 
     openPostSettings(locator) {
         cy.get(locator).click()
+        cy.screenshot()
     }
 
     deletePost(locator) {
         cy.get(locator).click({force: true})
+        cy.screenshot()
     }
 
     verifyPostSettings(locator, text) {
         cy.get(locator).then(($header)=>{
             expect($header[0].innerText).to.equal(text)
-        }) 
+        })
+        cy.screenshot()
     }
 
     verifyDeletePopUp(locator, text) {
         cy.get(locator).then(($header)=>{
             expect($header[0].innerText).to.equal(text)
         })
+        cy.screenshot()
     }
 
     deleteConfirmation(locator) {
         cy.get(locator).click()
+        cy.screenshot()
     }
 
     cancelDelete(locator) {
         cy.get(locator).first().click()
+        cy.screenshot()
     }
 
     getPublishedPost(locator) {
         cy.get(locator).first().click()
+        cy.screenshot()
     }
 
     editPostTitle(locator, newTitle) {
         cy.get(locator).clear()
         cy.get(locator).type(newTitle);
+        cy.screenshot();
     }
 
     clickUpdateButton(locator) {
         cy.get(locator).click()
+        cy.screenshot()
     }
 
     verifyUpdatePopUp(locator) {
@@ -63,6 +75,7 @@ class Post
         cy.get(locator).should('exist')
 
         const titleText = cy.get(titleElement).invoke('text');
+        
 
         return titleText === 'Updated';
     }
@@ -74,6 +87,7 @@ class Post
     editPostContent(locator, newContent) {
         cy.get(locator).clear()
         cy.get(locator).type(newContent);
+        cy.screenshot()
     }
 
     checkPostContent(locator) {
@@ -87,11 +101,13 @@ class Post
     clickLeaveButton(locator) {
         cy.get("a[data-test-link='posts']").click()
         cy.get(locator).click();
+        cy.screenshot()
     }
 
     verifyPostPageWithoutBaseURL(post_url)
     {
         cy.url().should('contain', post_url)
+        cy.screenshot()
     }
 
     static closeAlertInfo() {
