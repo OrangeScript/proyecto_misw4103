@@ -37,18 +37,19 @@
         "delete_confirmation_button": "button.gh-btn.gh-btn-red.gh-btn-icon.ember-view",
         "cancel_delete_button": "button.gh-btn",
         "edit_first_post": "[data-test-post-id] a",
-        "tags_navigation": "a[data-test-nav='tags']",
+
+        "tags_navigation": "a[href='#/tags/']",
         "new_tag_button": "a[class='ember-view gh-btn gh-btn-primary']",
-        "tag_name": "input[data-test-input='tag-name']",
-        "tag_color": "input[data-test-input='accentColor']",
-        "tag_slug": "input[data-test-input='tag-slug']",
-        "tag_description": "textarea[data-test-input='tag-description']",
-        "tag_save": "button[data-test-button='save']",
-        "tag_name_error": "span.error",
-        "tags_internal": "button[data-test-tags-nav='internal']",
-        "tag_first": "h3.gh-tag-list-name",
-        "tag_delete": "button[data-test-button='delete-tag']",
-        "tag_delete_confirm": "button[data-test-button='confirm']"
+        "tag_name": "input[name='name']",
+        "tag_color": "input[name='accent-color']",
+        "tag_slug": "input[name='slug']",
+        "tag_description": "textarea[name='description']",
+        "tag_save": "button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view",
+        "tag_name_error": "button.gh-btn.gh-btn-primary.gh-btn-icon.gh-btn-red.ember-view",
+        "tags_internal": "button.gh-btn",
+        "tag_first": "li.gh-list-row.gh-tags-list-item",
+        "tag_delete": "button.gh-btn.gh-btn-red.gh-btn-icon",
+        "tag_delete_confirm": "button.gh-btn.gh-btn-red.gh-btn-icon.ember-view"
     },
 
     "text_validation": {
