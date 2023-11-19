@@ -4,7 +4,7 @@ En la carpeta de cada herramienta, se especifican los requisitos e instrucciones
 
 ### Herramientas
 
-- Kraken (GHOST 5.71.2)
+- Kraken (GHOST 4.48.0)
 
 ## Requerimientos
 
@@ -13,10 +13,10 @@ En la carpeta de cada herramienta, se especifican los requisitos e instrucciones
 | NPM            | 6.13.14                  |
 | Node           | 16.20.2                  |
 | Android Studio | Giraffe 2022.3.1 Patch 2 |
-| Ghost          | 5.71.2                   |
+| Ghost          | 4.48.0                   |
 
 - Asegurese de tener instalado Ghost
-- Ghost 5.71.2 debe estar iniciado y corriendo en http://localhost:2368/
+- Ghost 4.48.0 debe estar iniciado y corriendo en http://localhost:3002/
 - Tener un usuario creado en su ambiente local de Ghost
 
 ### Escenarios
