@@ -29,29 +29,16 @@ describe("Testing delete post", () => {
         .within(() => {
           pt.getPublishedPost(locators.published_post);
           cy.wait(2000);
-          pt.verifyPostPage(urls.edit_post_url);
+          cy.url().should('contain' ,urls.post_url);
         });
 
       cy.get("main").within(() => {
             
-        pt.getFirstPost(locators.edit_first_post);
+        pt.getFirstPost(locators.first_post);
 
        
       });
 
-      /*cy.get("nav")
-        .first()
-        .within(() => {
-          pt.clickPost(locators.posts_navigation);
-          cy.wait(2000);
-          pt.verifyPostPage(urls.post_url);
-        });
-
-      cy.get("main").within(() => {
-        pt.getFirstPost(locators.first_post);
-        cy.wait(2000);
-        pt.verifyPostPage(urls.edit_post_url);
-      });*/
     });
   });
 
@@ -104,7 +91,7 @@ describe("Testing delete post", () => {
         pt.deleteConfirmation(locators.delete_confirmation_button);
       });
 
-      pt.verifyPostPage(urls.edit_post_url);
+      cy.url().should('contain' ,urls.post_url);
     });
   });
 
