@@ -1,7 +1,7 @@
 Feature: tags
 
 @user1 @web
-Scenario: Scenario1: As a user I want to create a public tag  
+Scenario: Scenario17: As a user I want to create a public tag  
       Given I login to Ghost
       And I wait for 2 seconds
       When I navigate to tags page
@@ -17,7 +17,7 @@ Scenario: Scenario1: As a user I want to create a public tag
       And I wait for 3 seconds
 
 @user2 @web
-Scenario: Scenario2: As a user I try to create a tag wiithout defiine a name  
+Scenario: Scenario18: As a user I try to create a tag wiithout defiine a name  
       Given I login to Ghost
       And I wait for 2 seconds
       When I navigate to tags page
@@ -32,7 +32,7 @@ Scenario: Scenario2: As a user I try to create a tag wiithout defiine a name
       And I wait for 3 seconds
 
 @user3 @web
-Scenario: Scenario3: As a user I want to create an iinternal tag  
+Scenario: Scenario19: As a user I want to create an iinternal tag  
       Given I login to Ghost
       And I wait for 2 seconds
       When I navigate to tags page
@@ -49,7 +49,7 @@ Scenario: Scenario3: As a user I want to create an iinternal tag
       And I wait for 3 seconds
 
 @user4 @web
-Scenario: Scenario4: As a user I want to edit a tag  
+Scenario: Scenario20: As a user I want to edit a tag  
       Given I login to Ghost
       And I wait for 2 seconds
       When I navigate to tags page
@@ -64,7 +64,7 @@ Scenario: Scenario4: As a user I want to edit a tag
       And I wait for 3 seconds
 
 @user5 @web
-Scenario: Scenario5: As a user I want to delete a tag  
+Scenario: Scenario21: As a user I want to delete a tag  
       Given I login to Ghost
       And I wait for 2 seconds
       When I navigate to tags page

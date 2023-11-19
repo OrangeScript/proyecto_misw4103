@@ -2,7 +2,7 @@
 Feature: Edit Post
 
 @web @user1
-Scenario: Edit an existing post with changed title only
+Scenario: Scenario8: Edit an existing post with changed title only
   Given I login to Ghost
   And there is an existing post that is published
   When I navigate to the post edit page
@@ -12,7 +12,7 @@ Scenario: Edit an existing post with changed title only
   And the post title should be "$$name1"
 
 @web @user2
-Scenario: Edit a post with changed content only
+Scenario: Scenario9: Edit a post with changed content only
   Given I login to Ghost
   And there is an existing post that is published
   And I wait 5 seconds
@@ -24,7 +24,7 @@ Scenario: Edit a post with changed content only
   And the post content should be "$$name2"
 
 @web @user3
-Scenario: Edit a post with changed title and content
+Scenario: Scenario10: Edit a post with changed title and content
   Given I login to Ghost
   And there is an existing post that is published
   And I wait 10 seconds

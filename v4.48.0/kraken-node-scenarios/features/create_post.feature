@@ -1,4 +1,4 @@
-Feature: reate post
+Feature: Create post
 
 @user1 @web
 Scenario: Scenario1: As an admin user, I want to try creating a post without a title and body  

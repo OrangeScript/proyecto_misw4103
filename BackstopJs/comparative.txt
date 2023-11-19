@@ -1,0 +1,74 @@
+// Paso 1
+{
+      "label": "Step 1",
+      "url": "./comparativeImages/kraken_Scenario1_4480_step_1.png",
+      "referenceUrl": "./comparativeImages/kraken_Scenario1_4480_step_1.png",
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Step 2",
+      "url": "./comparativeImages/kraken_Scenario1_4480_step_2.png",
+      "referenceUrl": "./comparativeImages/kraken_Scenario1_4480_step_2.png",
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Step 3",
+      "url": "./comparativeImages/kraken_Scenario1_4480_step_3.png",
+      "referenceUrl": "./comparativeImages/kraken_Scenario1_4480_step_3.png",
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Step 4",
+      "url": "./comparativeImages/kraken_Scenario1_4480_step_4.png",
+      "referenceUrl": "./comparativeImages/kraken_Scenario1_4480_step_4.png",
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Step 5",
+      "url": "./comparativeImages/kraken_Scenario1_4480_step_5.png",
+      "referenceUrl": "./comparativeImages/kraken_Scenario1_4480_step_5.png",
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    }
+   
+
+// Paso 2
+    {
+      "label": "Step 1",
+      "url": "./comparativeImages/kraken_Scenario1_5712_step_1.png",
+      "referenceUrl": "./comparativeImages/kraken_Scenario1_5712_step_1.png",
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Step 2",
+      "url": "./comparativeImages/kraken_Scenario1_5712_step_2.png",
+      "referenceUrl": "./comparativeImages/kraken_Scenario1_5712_step_2.png",
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Step 3",
+      "url": "./comparativeImages/kraken_Scenario1_5712_step_3.png",
+      "referenceUrl": "./comparativeImages/kraken_Scenario1_5712_step_3.png",
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Step 4",
+      "url": "./comparativeImages/kraken_Scenario1_5712_step_4.png",
+      "referenceUrl": "./comparativeImages/kraken_Scenario1_5712_step_4.png",
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    },
+    {
+      "label": "Step 5",
+      "url": "./comparativeImages/kraken_Scenario1_5712_step_5.png",
+      "referenceUrl": "./comparativeImages/kraken_Scenario1_5712_step_5.png",
+      "misMatchThreshold": 0.1,
+      "requireSameDimensions": true
+    }

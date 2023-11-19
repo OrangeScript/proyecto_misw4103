@@ -1,7 +1,7 @@
 Feature: Delete post
 
 @user1 @web
-Scenario: Delete excisting Post Scenario 
+Scenario: Scenario6: Delete excisting Post Scenario 
       Given I login to Ghost
       And I wait for 2 seconds
       And I click on posts
@@ -16,7 +16,7 @@ Scenario: Delete excisting Post Scenario
       And I wait for 5 seconds
 
 @user2 @web
-Scenario: Cancele Delete excisting Post Scenario 
+Scenario: Scenario7: Cancele Delete excisting Post Scenario 
       Given I login to Ghost
       And I click on posts
       And I wait for 2 seconds
