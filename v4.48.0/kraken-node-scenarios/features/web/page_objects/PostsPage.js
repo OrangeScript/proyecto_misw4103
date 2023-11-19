@@ -9,7 +9,7 @@ class PostsPage {
     }
   
     async navigateToPostEditPage() {    
-      let listItem = await this.driver.$('span.published');
+      let listItem = await this.driver.$('.gh-content-entry-title');
   
       if (listItem) {
           await listItem.click();
