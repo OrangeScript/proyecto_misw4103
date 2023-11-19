@@ -18,6 +18,10 @@ class Login
     verifyLogin(dashboard_url) {
         cy.url().should('eq', baseUrl + dashboard_url)
     }
+
+    verifyBadLogin() {
+        cy.url().should('contains', '/ghost/#/signin')
+    }
 }
 
 export default Login
