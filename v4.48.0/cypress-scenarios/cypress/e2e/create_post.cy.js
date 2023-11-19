@@ -77,84 +77,110 @@ describe("Testing create post", () => {
     cy.get(".gh-notification-title").should("exist");
   });
 
-  /*it("should create a post with HTML content", () => {
+  it("should create a post with HTML content", () => {
     cy.visit("/");
+    Post.closeAlertInfo();
     cy.wait(1000);
-    cy.get('a[data-test-nav="new-story"]').click();
-    cy.get("textarea[data-test-editor-title-input]").type(
+    cy.get('[title="New post"][href="#/editor/post/"]').click();
+    cy.get("textarea[placeholder='Post title']").type(
       "Post with HTML content"
     );
     cy.wait(2000);
-    cy.get('p[data-koenig-dnd-droppable="true"]').click();
+    cy.get('.koenig-editor__editor').click();
     cy.wait(2000);
     cy.get('button[aria-label="Add a card"]').click();
-    cy.wait(1000);
-    cy.get('button[data-kg-card-menu-item="HTML"]').click();
-    cy.get('div[data-kg-card-editing="true"]')
+    cy.wait(2000);
+    cy.get('[data-kg="cardmenu-card"][title="HTML"]').click();
+    cy.wait(2000);
+    cy.get('button[aria-label="Add a card"]').click();
+    cy.wait(2000);
+    cy.get('[data-kg="cardmenu-card"][title="HTML"]').click();
+    cy.wait(2000);
+    cy.get('[data-kg="editor-wrapper"]')
       .click()
       .type("<h1>Hello, HTML!</h1>");
-    cy.get('div[data-kg-card-editing="true"]').type("{enter}");
+    cy.get('[data-kg="editor-wrapper"]').type("{enter}");
     cy.wait(1000);
-    cy.get(".gh-publish-trigger").click();
+    cy.get('.gh-koenig-editor-pane').click();
+    cy.wait(1000);
+    cy.contains('span', 'Publish').click();
     cy.wait(2000);
-    cy.get(".gh-publish-cta > button").click();
+    cy.get('footer.gh-publishmenu-footer span:contains("Publish")').click();
     cy.wait(2000);
-    cy.get('button[data-test-button="confirm-publish"]').click();
+    cy.get('div.modal-footer span:contains("Publish")').click();
     cy.wait(2000);
-    cy.get(".gh-publish-title").should("exist");
+    cy.get(".gh-notification-title").should("exist");
   });
 
   it("should create a post with Markdown content", () => {
     cy.visit("/");
+    Post.closeAlertInfo();
     cy.wait(1000);
-    cy.get('a[data-test-nav="new-story"]').click();
-    cy.get("textarea[data-test-editor-title-input]").type(
+    cy.get('[title="New post"][href="#/editor/post/"]').click();
+    cy.get("textarea[placeholder='Post title']").type(
       "Post with Markdown content"
     );
     cy.wait(2000);
-    cy.get('p[data-koenig-dnd-droppable="true"]').click();
+    cy.get('.koenig-editor__editor').click();
     cy.wait(2000);
     cy.get('button[aria-label="Add a card"]').click();
     cy.wait(1000);
-    cy.get('button[data-kg-card-menu-item="HTML"]').click();
-    cy.get('div[data-kg-card-editing="true"]')
+    cy.get('[data-kg="cardmenu-card"][title="Markdown"]').click();
+    cy.wait(2000);
+    cy.get('button[aria-label="Add a card"]').click();
+    cy.wait(1000);
+    cy.get('[data-kg="cardmenu-card"][title="Markdown"]').click();
+    cy.wait(2000);
+    cy.get('[data-kg="editor-wrapper"]')
       .click()
       .type("# Hello, Markdown!");
-    cy.get('div[data-kg-card-editing="true"]').type("{enter}");
+    cy.get('[data-kg="editor-wrapper"]').type("{enter}");
     cy.wait(1000);
-    cy.get(".gh-publish-trigger").click();
+    cy.get('.gh-koenig-editor-pane').click();
+    cy.wait(1000);
+    cy.contains('span', 'Publish').click();
     cy.wait(2000);
-    cy.get(".gh-publish-cta > button").click();
+    cy.get('footer.gh-publishmenu-footer span:contains("Publish")').click();
     cy.wait(2000);
-    cy.get('button[data-test-button="confirm-publish"]').click();
+    cy.get('div.modal-footer span:contains("Publish")').click();
     cy.wait(2000);
-    cy.get(".gh-publish-title").should("exist");
+    cy.get(".gh-notification-title").should("exist");
   });
 
   it('should create a post using "/" shortcut for add HTML content', async () => {
     cy.visit("/");
+    Post.closeAlertInfo();
     cy.wait(1000);
-    cy.get('a[data-test-nav="new-story"]').click();
-    cy.get("textarea[data-test-editor-title-input]").type(
+    cy.get('[title="New post"][href="#/editor/post/"]').click();
+    cy.get("textarea[placeholder='Post title']").type(
       "Post with '/' shortcut"
     );
     cy.wait(2000);
-    cy.get('p[data-koenig-dnd-droppable=true]').click();
+    cy.get('.koenig-editor__editor').click();
     cy.wait(2000);
-    cy.get('p[data-koenig-dnd-droppable=true]').type("/");
+    cy.get('.koenig-editor__editor').type("/");
     cy.wait(2000);
-    cy.get('button[data-kg-card-menu-item="HTML"]').click();
-    cy.get('div[data-kg-card-editing="true"]')
+    cy.get('[data-kg="cardmenu-card"][title="HTML"]').click();
+    cy.wait(2000);
+    cy.get('.koenig-editor__editor').click();
+    cy.wait(2000);
+    cy.get('.koenig-editor__editor').type("/");
+    cy.wait(2000);
+    cy.get('[data-kg="cardmenu-card"][title="HTML"]').click();
+    cy.wait(2000);
+    cy.get('[data-kg="editor-wrapper"]')
       .click()
-      .type("<h1>Hello, '/' shortcut HTML!</h1>");
-    cy.get('div[data-kg-card-editing="true"]').type("{enter}");
+      .type("<h1>Hello, HTML!</h1>");
+    cy.get('[data-kg="editor-wrapper"]').type("{enter}");
     cy.wait(1000);
-    cy.get(".gh-publish-trigger").click();
+    cy.get('.gh-koenig-editor-pane').click();
+    cy.wait(1000);
+    cy.contains('span', 'Publish').click();
     cy.wait(2000);
-    cy.get(".gh-publish-cta > button").click();
+    cy.get('footer.gh-publishmenu-footer span:contains("Publish")').click();
     cy.wait(2000);
-    cy.get('button[data-test-button="confirm-publish"]').click();
+    cy.get('div.modal-footer span:contains("Publish")').click();
     cy.wait(2000);
-    cy.get(".gh-publish-title").should("exist");
-  });*/
+    cy.get(".gh-notification-title").should("exist");
+  });
 });
