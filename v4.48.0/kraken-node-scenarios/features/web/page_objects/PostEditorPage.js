@@ -4,7 +4,7 @@ class EditorPage {
     }
   
     async editPostTitle(newTitle) {
-      let titleArea = await this.driver.$('textarea[data-test-editor-title-input]');
+      let titleArea = await this.driver.$('textarea.gh-editor-title.ember-text-area.gh-input.ember-view');
   
       if (titleArea) {
         await titleArea.setValue(newTitle);
@@ -24,8 +24,10 @@ class EditorPage {
     }
   
     async clickUpdateButton() {
-      let updateButton = await this.driver.$('button[data-test-button="publish-save"]');
+      let updateButton = await this.driver.$('.gh-btn.gh-btn-editor.green.gh-publishmenu-trigger');
       await updateButton.click();
+      let finalUpdateButton = await this.driver.$('.gh-btn.gh-btn-black.gh-publishmenu-button.gh-btn-icon');
+      await finalUpdateButton.click();
     }
   
     async isUpdateConfirmationDisplayed() {
@@ -44,7 +46,7 @@ class EditorPage {
     }
   
     async checkPostTitle() {
-      let titleArea = await this.driver.$('textarea[data-test-editor-title-input]');
+      let titleArea = await this.driver.$('textarea.gh-editor-title.ember-text-area.gh-input.ember-view');
       let titleText = await titleArea.getValue();
       return titleText;
   

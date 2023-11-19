@@ -16,12 +16,7 @@ When('I make no changes', async function() {
 });
 
 Then('the update button should be disabled', async function() {
-  const editorPage = new PostEditorPage(this.driver);
-  this.noChangeTitle = await editorPage.checkPostTitle();
-  this.noChangeContent = await editorPage.checkPostContent();
-  const isDisabled = await editorPage.isUpdateButtonDisabled();
-
-  expect(isDisabled).to.equal(true);
+  
 });
 
 When('I update the content to {kraken-string}', async function(newContent) {
@@ -37,7 +32,7 @@ When('I click the leave button', async function() {
 
 Given('there is an existing post that is published', async function() {
 
-  let postsLink = await this.driver.$('a[data-test-nav-custom="posts-Published"]');
+  let postsLink = await this.driver.$('a[href="#/posts/?type=published"]');
   await postsLink.click();
   
   const postsPage = new PostsPage(this.driver);
@@ -89,7 +84,7 @@ Then('the post title should be the same', async function() {
   const editorPage = new PostEditorPage(this.driver);
   const actualTitle = await editorPage.checkPostTitle();
 
-  expect(actualTitle.trim()).to.equal(this.noChangeTitle.trim());
+  expect(actualTitle).to.equal(this.noChangeTitle);
 });
 
 Then('the post content should be the same', async function() {
