@@ -1,0 +1,23 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_Scenario_1_0_document_0_default.png",
+        "test": "../bitmaps_test/20231118-163010/backstop_default_Scenario_1_0_document_0_default.png",
+        "selector": "document",
+        "fileName": "backstop_default_Scenario_1_0_document_0_default.png",
+        "label": "Scenario 1",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "./image1.png",
+        "referenceUrl": "./image2.png",
+        "expect": 0,
+        "viewportLabel": "default",
+        "error": "Reference file not found /Users/ccxc/Desktop/BackstopJs/backstop_data/bitmaps_reference/backstop_default_Scenario_1_0_document_0_default.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "backstop_default"
+}
