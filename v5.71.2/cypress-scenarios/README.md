@@ -3,6 +3,7 @@ En la carpeta de cada herramienta, se especifican los requisitos e instrucciones
 
 ### Herramientas
 - Cypress (GHOST 5.71.2)
+- Navegador Google Chrome V119
 
 ## Requerimientos
 
@@ -32,7 +33,7 @@ npm install -g cypress
 ```
 *Fuente: [Cómo automatizar pruebas a interfaces web con Cypress](https://thesoftwaredesignlab.github.io/AutTestingCodelabs/cypress-tutorial/index.html) de Software Design Lab*
 
-**Ejcución del proyecto**
+**Ejecución del proyecto**
 
 A continuación las formas de ejecutar el código:
 
@@ -59,3 +60,9 @@ B. A través de la linea de comandos siguiendo los pasos a continuación:
 cypress run --headless
 ```      
       5.- En seguida veremos los resultados de la ejecución así como los pantallazos.
+
+**Evidencia de resultado de pruebas**
+
+![Descripción de la imagen](evidence5.71.2.png)
+
+

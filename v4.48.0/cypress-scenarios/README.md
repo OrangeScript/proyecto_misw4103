@@ -3,6 +3,7 @@ En la carpeta de cada herramienta, se especifican los requisitos e instrucciones
 
 ### Herramientas
 - Cypress (GHOST 4.48.8)
+- Navegador Google Chrome V119
 
 ## Requerimientos
 
@@ -59,3 +60,7 @@ B. A través de la linea de comandos siguiendo los pasos a continuación:
 cypress run --headless
 ```      
       5.- En seguida veremos los resultados de la ejecución así como los pantallazos.
+
+**Evidencia de resultado de pruebas**
+
+![Descripción de la imagen](evidence4.48.8.png)
