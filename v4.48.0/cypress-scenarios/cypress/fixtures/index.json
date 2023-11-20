@@ -1,0 +1,63 @@
+{
+    "credentials": {
+        "email": "s.menaz@uniandes.edu.co",
+        "password": "pruebas2023",
+        "bad_email": "bad@email.dev",
+        "bad_password": "badpassword"
+    
+    },
+
+    "urls" : {
+        "singin_url": "/#/signin",
+        "dashboard_url": "/#/dashboard",
+        "post_url": "/#/posts",
+        "edit_post_url": "/#/posts?type=published",
+        "tags_url": "/#/tags",
+        "new_tag_url": "/#/tags/new",
+        "internal_tags_url": "/#/tags?type=internal"
+    },
+
+    "locators": {
+        "email_input": "input.gh-input.email",
+        "password_input": "input.gh-input.password",
+        "login_button": "button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.ember-view",
+        
+        "posts_navigation": "a[data-test-nav='posts']",
+        "first_post": "h3.gh-content-entry-title",
+        "published_post": "a[title='Published'][href='#/posts/?type=published']",
+        "update_button": "span:contains('Update'):not(:has(span))",
+        "post_title": "textarea[placeholder='Post title']",
+        "post_content": ".koenig-editor__editor",
+        "updated_notification": ".gh-notification-passive",
+        "leave_editing_button": "button.gh-btn.gh-btn-red",
+        "post_settings_menu_button": "button.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon",
+        "post_settings_header": "div.settings-menu-header",
+        "delete_post_button": "button.gh-btn.gh-btn-hover-red.gh-btn-icon.settings-menu-delete-button",
+        "delete_post_verification_header": "h1",
+        "delete_confirmation_button": "button.gh-btn.gh-btn-red.gh-btn-icon.ember-view",
+        "cancel_delete_button": "button.gh-btn",
+        "edit_first_post": ".gh-post-list-title",
+
+        "tags_navigation": "a[href='#/tags/']",
+        "new_tag_button": "a[class='ember-view gh-btn gh-btn-primary']",
+        "tag_name": "input[name='name']",
+        "tag_color": "input[name='accent-color']",
+        "tag_slug": "input[name='slug']",
+        "tag_description": "textarea[name='description']",
+        "tag_save": "button.gh-btn.gh-btn-primary.gh-btn-icon.ember-view",
+        "tag_name_error": "button.gh-btn.gh-btn-primary.gh-btn-icon.gh-btn-red.ember-view",
+        "tags_internal": "button.gh-btn",
+        "tag_first": "li.gh-list-row.gh-tags-list-item",
+        "tag_delete": "button.gh-btn.gh-btn-red.gh-btn-icon",
+        "tag_delete_confirm": "button.gh-btn.gh-btn-red.gh-btn-icon.ember-view",
+        "confirm_update_button": "footer.gh-publishmenu-footer span:contains('Update')",
+        "return_to_posts": "a:contains('Posts')"
+    },
+
+    "text_validation": {
+
+        "post_settings_header": "Post settings",
+        "pop_up_delete_header": "Are you sure you want to delete this post?"
+    
+    }
+}
