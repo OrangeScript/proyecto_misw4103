@@ -1,9 +1,8 @@
-//import { last } from "lodash";
 import Login from "../pages/login";
 import Tag from "../pages/tags";
 const baseUrl = Cypress.config().baseUrl;
 
-describe("Testing create a tag", () => {
+describe("Testing create an internal tag", () => {
     beforeEach(() => {
       const ln = new Login();
       const tg = new Tag();
@@ -32,7 +31,12 @@ describe("Testing create a tag", () => {
             tg.clickTags(locators.tags_navigation);
             cy.wait(2000);
             tg.verifyTagsPage(urls.tags_url);
-          });
+        });
+
+        cy.get("div.gh-canvas-header").within(() => {
+            cy.get(locators.tags_internal).last().click()
+            tg.verifyTagsPage(urls.internal_tags_url);
+        });
 
       });
     });
@@ -52,9 +56,14 @@ describe("Testing create a tag", () => {
             });
 
             cy.get("form").within(() => {
-                tg.writeDate(locators.tag_name, "new tag");
+                tg.writeDate(locators.tag_name, "new internal tag");
+                tg.writeDate(locators.tag_color, "ffffff");
                 tg.writeDate(locators.tag_slug, "tag slug");
                 tg.writeDate(locators.tag_description, "hello world");
+            })
+
+            cy.get("div.input-color").within(() => {
+                tg.writeDate(locators.tag_color, "ffffff");
             })
 
             cy.get("section.view-actions").within(() => {
@@ -67,7 +76,7 @@ describe("Testing create a tag", () => {
 
     });
 
-    it("Crear un tag publico definiendo solo el Nombre", () => {
+    it("Crear un tag interno definiendo solo el Nombre", () => {
         const tg = new Tag();
 
         cy.fixture("index.json").then((index) => {
@@ -94,7 +103,7 @@ describe("Testing create a tag", () => {
         });
     });
 
-    it("Crear un tag publico con cadena de texto de 200 caracteres", () => {
+    it("Crear un tag interno con cadena de texto de 200 caracteres", () => {
         const tg = new Tag();
 
         cy.fixture("index.json").then((index) => {
@@ -124,7 +133,7 @@ describe("Testing create a tag", () => {
         });
     });
 
-    it("Crear un tag publico con Meta data", () => {
+    it("Crear un tag interno con Meta data", () => {
         const tg = new Tag();
 
         cy.fixture("index.json").then((index) => {
@@ -166,7 +175,7 @@ describe("Testing create a tag", () => {
         });
     });
 
-    it("Crear un tag publico sin nombre", () => {
+    it("Crear un tag interno sin nombre", () => {
         const tg = new Tag();
 
         cy.fixture("index.json").then((index) => {
@@ -181,8 +190,6 @@ describe("Testing create a tag", () => {
             });
 
             cy.get("form").within(() => {
-                //tg.writeDate(locators.tag_name, "new tag");
-                //tg.writeDate(locators.tag_color, "ffffff");
                 tg.writeDate(locators.tag_slug, "tag slug");
                 tg.writeDate(locators.tag_description, "hello world");
             })
@@ -199,6 +206,5 @@ describe("Testing create a tag", () => {
         });
 
     });
-
 
 });
