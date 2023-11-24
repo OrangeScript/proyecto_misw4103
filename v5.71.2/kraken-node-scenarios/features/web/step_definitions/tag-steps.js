@@ -1,6 +1,7 @@
 const { When, Then } = require("@cucumber/cucumber");
 const expect = require("chai").expect;
 const TagPage = require("../page_objects/TagPage");
+const long_tag_name = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu'
 
 When("I navigate to tags page", async function () {
     let element = await this.driver.$('a[data-test-nav="tags"]');
@@ -76,4 +77,9 @@ When("I click confirm the delete", async function () {
 Then ('I confirm the url contains {kraken-string}', async function (url) {
     let currentUrl = await this.driver.getUrl();
     return currentUrl.includes(url);
+});
+
+When ('I write a long tag name', async function () {
+  let element = await this.driver.$("input[data-test-input='tag-name']");
+  return await element.setValue(long_tag_name);
 });

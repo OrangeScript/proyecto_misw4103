@@ -1,10 +1,12 @@
-Feature: tags
+Feature: Internal tags
 
 @user1 @web
-Scenario: Scenario17: As a user I want to create a public tag using all the form
+Scenario: ScenarioXX: As a user I want to create an internal tag using all the form
       Given I login to Ghost
       And I wait for 2 seconds
       When I navigate to tags page
+      And I wait for 1 seconds
+      And I go to internal tag option
       And I wait for 1 seconds
       And click on new tag
       And I wait for 1 seconds
@@ -14,13 +16,15 @@ Scenario: Scenario17: As a user I want to create a public tag using all the form
       And click on save button
       And I wait for 1 seconds
       Then I verify message button "Saved"
-      And I wait for 3 seconds
+      And I wait for 3 second
 
 @user2 @web
-Scenario: Scenario18: As a user I try to create a tag without define a name  
+Scenario: Scenario18: As a user I try to create an internal tag without define a name  
       Given I login to Ghost
       And I wait for 2 seconds
       When I navigate to tags page
+      And I wait for 1 seconds
+      And I go to internal tag option
       And I wait for 1 seconds
       And click on new tag
       And I wait for 1 seconds
@@ -32,10 +36,12 @@ Scenario: Scenario18: As a user I try to create a tag without define a name
       And I wait for 3 seconds
 
 @user3 @web
-Scenario: ScenarioXX: As a user I want to create a public tag defining just the tag name
+Scenario: ScenarioXX: As a user I want to create an internal tag defining just the tag name
       Given I login to Ghost
       And I wait for 2 seconds
       When I navigate to tags page
+      And I wait for 1 seconds
+      And I go to internal tag option
       And I wait for 1 seconds
       And click on new tag
       And I wait for 1 seconds
@@ -43,13 +49,15 @@ Scenario: ScenarioXX: As a user I want to create a public tag defining just the 
       And click on save button
       And I wait for 1 seconds
       Then I verify message button "Saved"
-      And I wait for 3 seconds
+      And I wait for 3 second
 
 @user4 @web
-Scenario: ScenarioXX: As a user I want to create a public tag using a name with 200 characters
+Scenario: ScenarioXX: As a user I want to create an internal tag using a name with 200 characters
       Given I login to Ghost
       And I wait for 2 seconds
       When I navigate to tags page
+      And I wait for 1 seconds
+      And I go to internal tag option
       And I wait for 1 seconds
       And click on new tag
       And I wait for 1 seconds
@@ -59,4 +67,4 @@ Scenario: ScenarioXX: As a user I want to create a public tag using a name with 
       And click on save button
       And I wait for 1 seconds
       Then I verify message button "Saved"
-      And I wait for 3 seconds
+      And I wait for 3 second
