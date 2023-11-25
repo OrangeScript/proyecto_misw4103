@@ -54,7 +54,14 @@
         "publish_post": ".gh-publish-trigger",
         "final_review": ".gh-publish-cta > button",
         "confirm_final": "button[data-test-button='confirm-publish']",
-        "title_publish_style":".gh-publish-title"
+        "title_publish_style":".gh-publish-title",
+        "button_input_text": "input[data-testid='button-input-text']",
+        "button_input_url": "input[data-testid='button-input-url']",
+        "data_kg_card_editing": "div[data-kg-card-editing='true']",
+        "koenig_lexical_heading": ".koenig-lexical.koenig-lexical-heading > div > div > p",
+        "koenig_lexical_text": ".koenig-lexical.text-xl > div > div > p",
+        "bookmark_url":"input[data-testid='bookmark-url']",
+        "email_content_locator": "div[data-kg-card-editing='true'] [data-kg='editor'] .kg-prose"
     },
 
     "text_validation": {
@@ -62,5 +69,14 @@
         "post_settings_header": "Post settings",
         "pop_up_delete_header": "Are you sure you want to delete this post?"
     
+    },
+
+    "data_dummy": {
+        "url_coursera": "https://www.coursera.org/",
+        "html_dummy": "<h1>Hola mundo</h1>",
+        "markdown_dummy": "# Hola mundo",
+        "callout_dummy": "Call out text"
+
     }
+
 }

@@ -98,5 +98,13 @@ class Post
        cy.get(locator).should('exist');
     }
 
+    writePostContent(locator, content) {
+        cy.get(locator).click().type(content);
+    }
+
+    typeEnter(locator) {
+        cy.get(locator).type("{enter}");
+    }
+
 }
 export default Post
