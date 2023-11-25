@@ -23,6 +23,13 @@ Scenario: As an admin user, I want to create a post
 Examples:
      | type               |
      | Button             |  
-
+     | Bookmark           |
+     | Markdown           |
+     | HTML               |
+     | Image              |
+     | Divider            |
+     | Email content      |
+     | Callout            | 
+     | Toggle             |
 
 
