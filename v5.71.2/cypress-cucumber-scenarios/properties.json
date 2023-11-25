@@ -1,0 +1,6 @@
+{
+  "EMAIL": "s.menaz@uniandes.edu.co",
+  "PASSWORD": "pruebas2023",
+  "LOGIN_URL": "http://localhost:2368/ghost/#/signin",
+  "GHOST_VERSION": "5.71.2"
+}
