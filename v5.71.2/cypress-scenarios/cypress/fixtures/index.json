@@ -3,7 +3,8 @@
         "email": "hi@imdiego.dev",
         "password": "holamundo123",
         "bad_email": "bad@email.dev",
-        "bad_password": "badpassword"
+        "bad_password": "badpassword",
+        "incorrect_email": "hiimdiegoo.dev"
     
     },
 
@@ -21,6 +22,7 @@
         "email_input": "input.gh-input.email",
         "password_input": "input.gh-input.password",
         "login_button": "button.login.gh-btn.gh-btn-login.gh-btn-block.gh-btn-icon.ember-view",
+        "bad_email_input": "div.form-group.error",
         
         "posts_navigation": "a[data-test-nav='posts']",
         "first_post": "h3.gh-content-entry-title",
