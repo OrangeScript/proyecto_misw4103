@@ -47,3 +47,25 @@ Scenario: Scenario16: Login Bad credentials Scenario
       And I click login
       And I wait for 2 seconds
       Then I get retry button
+
+@user5 @web
+Scenario: ScenarioXX: Login with incorrect email
+      Given I navigate to page "<LOGIN_URL>"
+      And I wait for 3 seconds
+      When I enter email "badUsergmail.com"
+      And I wait for 2 seconds
+      And I enter password "badPassword"
+      And I wait for 2 seconds
+      And I click login
+      And I wait for 2 seconds
+      Then I get red incorrect form field
+
+@user6 @web
+Scenario: Scenario16: Login without login
+      Given I navigate to page "<LOGIN_URL>"
+      And I wait for 3 seconds
+      When I enter email "badUsergmail.com"
+      And I wait for 2 seconds
+      And I click login
+      And I wait for 2 seconds
+      Then I get red incorrect form field

@@ -31,3 +31,8 @@ When("I get retry button", async function () {
     //let currentUrl = await this.driver.getUrl();
     //return currentUrl.includes("dashboard");
   });
+
+Then ('I get red incorrect form field', async function () {
+    let redIcorrectField = await this.driver.$('div.form-group.error');
+    return redIcorrectField;
+  });
