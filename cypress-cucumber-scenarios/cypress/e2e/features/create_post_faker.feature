@@ -1,6 +1,6 @@
-Feature: Create Post
+Feature: Create Post Radndom Data
 
-Scenario: As an admin user, I want to create a post
+Scenario: As an admin user, I want to create a post with random data
       Given I signin to Ghost 
       And I wait for 2 seconds
       Then I check dashboard URL
@@ -19,20 +19,14 @@ Scenario: As an admin user, I want to create a post
       And I wait for 2 seconds
       Then I see the post "<type>" confirmation
 
-
+@random
 Examples:
      | type                 |
-     | Button               |  
-     | Bookmark             |
+     | Button               |
      | Markdown             |
      | HTML                 |
-     | Image                |
-     | Divider              |
      | Email content        |
-     | Callout              | 
-     | Toggle               |
+     | Toggle               |	
      | Public preview       |
-     | Header               |
-     | Signup               |
-     | YouTube              |
-     | X (formerly Twitter) |
+     | Header               |	
+     | Signup               |	 

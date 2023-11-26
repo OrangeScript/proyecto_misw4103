@@ -76,14 +76,19 @@
     },
 
     "data_dummy": {
-        "url_coursera": "https://www.coursera.org/",
+        "button_label_dummy": "Button",
+        "url_dummy": "https://www.coursera.org/",
         "html_dummy": "<h1>Hola mundo</h1>",
         "markdown_dummy": "# Hola mundo",
         "callout_dummy": "Call out text",
         "public_preview_dummy": "Public preview text",
         "subheader_dummy": " Subheader text",
         "youtube_dummy":"https://www.youtube.com/watch?v=NoH-6m_Sznc",
-        "twitter_dummy": "https://twitter.com/Uniandes"
+        "twitter_dummy": "https://twitter.com/Uniandes",
+        "email_content_dummy": "Content,",
+        "header_toggle_dummy": "Header toggle",
+        "content_toggle_dummy": "Toggle Content",
+        "header_header_toggle_dummy": "Header"
 
 
     }

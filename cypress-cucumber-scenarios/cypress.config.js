@@ -29,7 +29,7 @@ module.exports = defineConfig({
   numTestsKeptInMemory: 1,
   e2e: {
     specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: "http://localhost:2370/ghost",
+    baseUrl: "http://localhost:2368/ghost",
     supportFile: "cypress/support/e2e.js",
     setupNodeEvents,
   },

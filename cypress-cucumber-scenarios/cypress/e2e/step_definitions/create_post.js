@@ -1,15 +1,33 @@
-import { Given, When, Then, Step} from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then, Step, BeforeStep} from "@badeball/cypress-cucumber-preprocessor";
 import Login from "../../pages/login";
 import Post from "../../pages/post";
+import {createPostDataPool} from "../../support/data-pool"
 var pt= null;
 var locators = null;
 var data_dummy = null;
+var isRandomScenario = false
+
+BeforeStep(function ({ pickle, pickleStep, gherkinDocument, testCaseStartedId, testStepId }) {
+  // Antes de cada paso con la etiqueta @negative, establecer la bandera como negativa
+  const annotations = pickle.tags.map(tag => tag.name);
+   if (annotations.includes('@random')) {
+     isRandomScenario = true;
+   } else {
+     isRandomScenario = false;
+   }
+});
 
 When("I click new post", () => {
     pt = new Post();
     cy.fixture("index.json").then((index) => {
         locators = index.locators;
-        data_dummy= index.data_dummy;
+        if(isRandomScenario) {
+          //Creamos random data si detectamos la bandera
+          data_dummy = createPostDataPool(1)[0];
+        } else {
+          data_dummy= index.data_dummy;
+        }
+        
         pt.clickPost(locators.new_post);
       });
 
@@ -34,7 +52,7 @@ When("I select the {string} option", (type) => {
       Step(this, "I fill the button's settings");
       break;
     case "Bookmark":
-      Step(this, `I write the anchor "${data_dummy.url_coursera}" with "bookmark_url"`);
+      Step(this, `I write the anchor "${data_dummy.url_dummy}" with "bookmark_url"`);
       break;
     case "Markdown":
         Step(this, `I fill the "${type}" settings`);
@@ -46,7 +64,7 @@ When("I select the {string} option", (type) => {
         Step(this, "I fill the image's settings");
         break;
     case "Email content":
-        pt.writePostContent(locators.email_content_locator, "Content,");
+        pt.writePostContent(locators.email_content_locator, data_dummy.email_content_dummy);
         pt.typeEnter(locators.email_content_locator);
         cy.wait(1000);
       break;
@@ -54,18 +72,18 @@ When("I select the {string} option", (type) => {
         Step(this, `I fill the "${type}" settings`);
         break;
     case "Toggle":
-        Step(this, `I write the header "Header toggle"`);
-        Step(this, `I write the collapsible toggle content "Toggle Content"`);
+        Step(this, `I write the header "${data_dummy.header_toggle_dummy}"`);
+        Step(this, `I write the collapsible toggle content "${data_dummy.content_toggle_dummy}"`);
         break;
     case "Public preview":
         pt.writePostContent(locators.post_content, data_dummy.public_preview_dummy);
         break;
     case "Header":
-        Step(this, `I write the header "Header"`);
+        Step(this, `I write the header "${data_dummy.header_header_toggle_dummy}"`);
         pt.writePostContent(locators.header_subheader_content, data_dummy.subheader_dummy);
         break;
     case "Signup":
-        Step(this, `I write the header " Header"`);
+        Step(this, `I write the header "${data_dummy.header_header_toggle_dummy}"`);
         pt.writePostContent(locators.signup_subheader_content, data_dummy.subheader_dummy);
         break;
     case "YouTube":
@@ -98,8 +116,8 @@ Then("I see the post {string} confirmation", (type) => {
 });
 
 When("I fill the button's settings", (text) => {
-  pt.writePostContent(locators.button_input_text, "Button");
-  pt.writePostContent(locators.button_input_url, data_dummy.url_coursera);
+  pt.writePostContent(locators.button_input_text, data_dummy.button_label_dummy);
+  pt.writePostContent(locators.button_input_url, data_dummy.url_dummy);
   pt.typeEnter(locators.button_input_url);
   cy.wait(1000);
 
@@ -159,6 +177,20 @@ When("I write the collapsible toggle content {string}", (collapsibleContent) => 
     pt.writePostContent(locators.koenig_lexical_text, collapsibleContent);
     cy.wait(1000);
 });
+
+
+When("I have provided below information to create the different type of post", (datatable) => {
+
+  datatable.hashes().forEach((element) => {
+
+    console.log(element);
+    Step(this, "I click new post");
+    
+
+  });
+ 
+});
+
 
 
 Given("a table step of posts", (datatable) => {

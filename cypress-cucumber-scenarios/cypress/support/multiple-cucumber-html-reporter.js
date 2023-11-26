@@ -2,10 +2,10 @@ const reporter = require('multiple-cucumber-html-reporter');
 const dataAtual = new Date();
 
 const options = {
-    jsonDir: 'cypress/report', // Diretório onde os arquivos JSON dos resultados do Cucumber estão armazenados
-    reportPath: 'cypress/cucumber-report', // Diretório de saída para o relatório HTML
-    pageTitle: 'E2E Web RIS',
-    reportName: 'E2E Web RIS',
+    jsonDir: 'cypress/report', // Directorio donde los archivos JSON con resultados de Cucumber 
+    reportPath: 'cypress/cucumber-report', // Directorio de salida para lo relacionado con HTML
+    pageTitle: 'E2E Web Ghost',
+    reportName: 'E2E Web Ghost',
     displayDuration: true,
     // durationInMS: true,
     // openReportInBrowser: true,
@@ -24,8 +24,8 @@ const options = {
     customData: {
         title: 'Test Run Info',
         data: [
-            { label: 'Project', value: 'E2E Web RIS' },
-            { label: 'Release', value: '1.0.0' },
+            { label: 'Project', value: 'E2E Web Ghost' },
+            { label: 'Release', value: '5.71.2' },
         ]
     }
 };
