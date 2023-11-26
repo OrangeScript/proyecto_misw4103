@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
 const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild");
-const process = require('node:process');
+const process = require("node:process");
 
 async function setupNodeEvents(on, config) {
   // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
@@ -29,12 +29,12 @@ module.exports = defineConfig({
   numTestsKeptInMemory: 1,
   e2e: {
     specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: 'http://localhost:2368/ghost',
+    baseUrl: "http://localhost:2370/ghost",
     supportFile: "cypress/support/e2e.js",
     setupNodeEvents,
   },
-  reporter: 'junit',
+  reporter: "junit",
   reporterOptions: {
-    mochaFile: 'results/test-output-[hash].xml',
-  }
+    mochaFile: "results/test-output-[hash].xml",
+  },
 });
