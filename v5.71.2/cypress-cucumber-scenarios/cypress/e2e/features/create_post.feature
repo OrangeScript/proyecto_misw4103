@@ -21,15 +21,21 @@ Scenario: As an admin user, I want to create a post
 
 
 Examples:
-     | type               |
-     | Button             |  
-     | Bookmark           |
-     | Markdown           |
-     | HTML               |
-     | Image              |
-     | Divider            |
-     | Email content      |
-     | Callout            | 
-     | Toggle             |
+     | type                 |
+     | Button               |  
+     | Bookmark             |
+     | Markdown             |
+     | HTML                 |
+     | Image                |
+     | Divider              |
+     | Email content        |
+     | Callout              | 
+     | Toggle               |
+     | Public preview       |
+     | Header               |
+     | Signup               |
+     | YouTube              |
+     | X (formerly Twitter) |
+     
 
 

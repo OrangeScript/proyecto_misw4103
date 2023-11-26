@@ -34,7 +34,7 @@ When("I select the {string} option", (type) => {
       Step(this, "I fill the button's settings");
       break;
     case "Bookmark":
-      Step(this, "I write the anchor");
+      Step(this, `I write the anchor "${data_dummy.url_coursera}" with "bookmark_url"`);
       break;
     case "Markdown":
         Step(this, `I fill the "${type}" settings`);
@@ -54,10 +54,26 @@ When("I select the {string} option", (type) => {
         Step(this, `I fill the "${type}" settings`);
         break;
     case "Toggle":
-        Step(this, `I write the header toggle "Header toggle"`);
+        Step(this, `I write the header "Header toggle"`);
         Step(this, `I write the collapsible toggle content "Toggle Content"`);
         break;
-    // Agrega más casos según sea necesario
+    case "Public preview":
+        pt.writePostContent(locators.post_content, data_dummy.public_preview_dummy);
+        break;
+    case "Header":
+        Step(this, `I write the header "Header"`);
+        pt.writePostContent(locators.header_subheader_content, data_dummy.subheader_dummy);
+        break;
+    case "Signup":
+        Step(this, `I write the header " Header"`);
+        pt.writePostContent(locators.signup_subheader_content, data_dummy.subheader_dummy);
+        break;
+    case "YouTube":
+        Step(this, `I write the anchor "${data_dummy.youtube_dummy}" with "embed_url"`);
+        break;
+    case "X (formerly Twitter)":
+        Step(this, `I write the anchor "${data_dummy.twitter_dummy}" with "embed_url"`);
+        break;
     default:
       // Tratamiento por defecto si el valor de type no coincide con ningún caso
       break;
@@ -89,9 +105,9 @@ When("I fill the button's settings", (text) => {
 
 });
 
-When("I write the anchor", () => { 
-    pt.writePostContent(locators.bookmark_url, data_dummy.url_coursera);
-    pt.typeEnter(locators.bookmark_url);
+When("I write the anchor {string} with {string}", (url, locatorKey) => { 
+    pt.writePostContent(locators[locatorKey], url);
+    pt.typeEnter(locators[locatorKey]);
     cy.wait(5000);
 });
 
@@ -134,7 +150,7 @@ When("I fill the image's settings", (text) => {
   cy.wait(5000);
 });
 
-When("I write the header toggle {string}", (headerContent) => {
+When("I write the header {string}", (headerContent) => {
     pt.writePostContent(locators.koenig_lexical_heading, headerContent);
     cy.wait(1000);
 });
