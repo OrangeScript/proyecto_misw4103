@@ -10,12 +10,18 @@
 
     "urls" : {
         "singin_url": "/#/signin",
+
         "dashboard_url": "/#/dashboard",
+
         "post_url": "/#/posts",
         "edit_post_url": "/#/posts?type=published",
+
         "tags_url": "/#/tags",
         "new_tag_url": "/#/tags/new",
-        "internal_tags_url": "/#/tags?type=internal"
+        "internal_tags_url": "/#/tags?type=internal",
+
+        "pages_url": "/#/pages",
+        "edit_page": "/#/editor/page"
     },
 
     "locators": {
@@ -34,6 +40,8 @@
         "leave_editing_button": "button.gh-btn.gh-btn-red",
         "post_settings_menu_button": "button.settings-menu-toggle.gh-btn.gh-btn-editor.gh-btn-icon.icon-only.gh-btn-action-icon",
         "post_settings_header": "div.settings-menu-header",
+
+        "pages_navigation": "a[data-test-nav='pages']",
 
         "delete_post_button": "button.gh-btn.gh-btn-outline.gh-btn-icon.gh-btn-fullwidth",
         "delete_post_verification_header": "h1",
@@ -56,14 +64,29 @@
         "tag_metadata_expand": "button.gh-btn.gh-btn-expand",
         "input_meta_title": "input[name='metaTitle']",
         "input_meta_description": "textarea[name='metaDescription']",
-        "input_canonical_url": "input[name='canonicalUrl']"
+        "input_canonical_url": "input[name='canonicalUrl']",
+
+        "create_page":"a[class='ember-view gh-btn gh-btn-primary view-actions-top-row']",
+        "page_title":"textarea.gh-editor-title.ember-text-area.gh-input.ember-view",
+        "page_content":"div[data-kg='editor']",
+        "page_publish":"button[data-test-button='publish-flow']",
+        "page_confirm_publish_1":"div.gh-publish-cta",
+        "page_confirm_publish_2":"button[data-test-button='confirm-publish']",
+        "page_settings": "button[title='Settings']",
+        "page_url": "input[name='post-setting-slug']",
+        "page_publish_date": "div.gh-date-time-picker-date",
+        "page_excerpt": "textarea[name='post-setting-custom-excerpt']",
+        "page_settings_close": "button[title='settings-menu-open']"
     },
 
     "text_validation": {
 
         "post_settings_header": "Post settings",
         "pop_up_delete_header": "Are you sure you want to delete this post?",
-        "string_200_characters": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu"
-    
+        "string_200_characters": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+        
+        "page_created_succesfully": "Boom. It’s out there",
+        "page_title_error_validation": "Title cannot be longer than 255 characters.",
+        "page_bad_date": "Invalid date format"
     }
 }
