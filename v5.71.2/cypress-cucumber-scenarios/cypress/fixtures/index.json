@@ -61,7 +61,11 @@
         "koenig_lexical_heading": ".koenig-lexical.koenig-lexical-heading > div > div > p",
         "koenig_lexical_text": ".koenig-lexical.text-xl > div > div > p",
         "bookmark_url":"input[data-testid='bookmark-url']",
-        "email_content_locator": "div[data-kg-card-editing='true'] [data-kg='editor'] .kg-prose"
+        "email_content_locator": "div[data-kg-card-editing='true'] [data-kg='editor'] .kg-prose",
+        "header_subheader_content": "[data-testid='header-subheader-editor'] > [data-kg='editor'] > .kg-prose > p",
+        "signup_subheader_content": "[data-testid='signup-subheader-editor'] > [data-kg='editor'] > .kg-prose > p",
+        "embed_url": "input[data-testid='embed-url']"
+        
     },
 
     "text_validation": {
@@ -75,7 +79,12 @@
         "url_coursera": "https://www.coursera.org/",
         "html_dummy": "<h1>Hola mundo</h1>",
         "markdown_dummy": "# Hola mundo",
-        "callout_dummy": "Call out text"
+        "callout_dummy": "Call out text",
+        "public_preview_dummy": "Public preview text",
+        "subheader_dummy": " Subheader text",
+        "youtube_dummy":"https://www.youtube.com/watch?v=NoH-6m_Sznc",
+        "twitter_dummy": "https://twitter.com/Uniandes"
+
 
     }
 
