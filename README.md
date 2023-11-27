@@ -16,7 +16,7 @@ En la carpeta de cada herramienta, se especifican los requisitos e instrucciones
 - Kraken
 - Cypress
 
-### Funcionalidades Semana 5 - Ghost 5.71.2 (20 escenarios por herramienta)
+## Semana 5
 
 - [Instrucciones Kraken](https://github.com/OrangeScript/proyecto_misw4103/tree/main/kraken-node-scenarios)
 - [Instrucciones Cypress](https://github.com/OrangeScript/proyecto_misw4103/tree/main/cypress-scenarios)
@@ -25,6 +25,7 @@ En la carpeta de cada herramienta, se especifican los requisitos e instrucciones
 
 - [Cypress y Kraken](https://github.com/OrangeScript/proyecto_misw4103/wiki/Pros-y-contras-herramientas)
 
+## Semana 6
 
 ### Ventajas y desventajas de BackstopJS y Resemble.js
 
