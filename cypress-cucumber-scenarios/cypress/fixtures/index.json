@@ -64,7 +64,10 @@
         "email_content_locator": "div[data-kg-card-editing='true'] [data-kg='editor'] .kg-prose",
         "header_subheader_content": "[data-testid='header-subheader-editor'] > [data-kg='editor'] > .kg-prose > p",
         "signup_subheader_content": "[data-testid='signup-subheader-editor'] > [data-kg='editor'] > .kg-prose > p",
-        "embed_url": "input[data-testid='embed-url']"
+        "embed_url": "input[data-testid='embed-url']",
+        "unsplash_img": "[data-kg-unsplash-gallery-item='true'] img",
+        "insert_img_unsplash": "a[data-kg-unsplash-insert-button='true']",
+        "span_url_error":"[data-testid='embed-url-error-message']"
         
     },
 
@@ -88,9 +91,12 @@
         "email_content_dummy": "Content,",
         "header_toggle_dummy": "Header toggle",
         "content_toggle_dummy": "Toggle Content",
-        "header_header_toggle_dummy": "Header"
-
-
+        "header_header_toggle_dummy": "Header",
+        "vimeo_dummy": "https://vimeo.com/729366119",
+        "codepen_dummy":"https://codepen.io/gmahecha/pen/qxgOwY", 
+        "spotify_url_dummy": "https://open.spotify.com/show/2FFULbQprU1xIB8qZZK6RJ",
+        "soundcloud_url_dummy": "https://soundcloud.com/chuckpee",
+        "other_url_dummy": "https://cursos.virtual.uniandes.edu.co/miso4208/"
     }
 
 }

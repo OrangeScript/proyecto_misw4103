@@ -92,6 +92,27 @@ When("I select the {string} option", (type) => {
     case "X (formerly Twitter)":
         Step(this, `I write the anchor "${data_dummy.twitter_dummy}" with "embed_url"`);
         break;
+    case "Unsplash":
+        cy.get(locators.unsplash_img).first().click({ force: true });
+        cy.wait(1000);
+        pt.clickPost(locators.insert_img_unsplash);
+        cy.wait(1000);
+        break;
+    case "Vimeo":
+        Step(this, `I write the anchor "${data_dummy.vimeo_dummy}" with "embed_url"`);
+        break;
+    case "CodePen":
+        Step(this, `I write the anchor "${data_dummy.codepen_dummy}" with "embed_url"`);
+        break;
+    case "Spotify":
+        Step(this, `I write the anchor "${data_dummy.spotify_url_dummy}" with "embed_url"`);
+        break;
+    case "SoundCloud":
+        Step(this, `I write the anchor "${data_dummy.soundcloud_url_dummy}" with "embed_url"`);
+        break;
+    case "Other...":
+        Step(this, `I write the anchor "${data_dummy.other_url_dummy}" with "embed_url"`);
+        break;
     default:
       // Tratamiento por defecto si el valor de type no coincide con ningún caso
       break;
@@ -127,6 +148,9 @@ When("I write the anchor {string} with {string}", (url, locatorKey) => {
     pt.writePostContent(locators[locatorKey], url);
     pt.typeEnter(locators[locatorKey]);
     cy.wait(5000);
+    if(isRandomScenario) {
+      Step(this, "I see the link post error message");
+    }
 });
 
 When("I fill the {string} settings",(opcion) => {
@@ -209,5 +233,10 @@ Given("a table step of posts", (datatable) => {
 
   })
 
+});
+
+Then("I see the link post error message", (type) => {
+  cy.contains('span', 'There was an error when parsing the URL.')
+  .should('exist');
 });
   

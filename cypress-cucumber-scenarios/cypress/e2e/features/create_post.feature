@@ -36,3 +36,9 @@ Examples:
      | Signup               |
      | YouTube              |
      | X (formerly Twitter) |
+     | Unsplash             |
+     | Vimeo                |
+     | CodePen              |
+     | Spotify              |
+     | SoundCloud           |
+     | Other...             |

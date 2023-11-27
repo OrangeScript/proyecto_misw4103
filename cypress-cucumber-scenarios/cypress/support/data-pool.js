@@ -17,7 +17,13 @@ export function createPostDataPool(size) {
       content_toggle_dummy:faker.lorem.sentence(),
       header_header_toggle_dummy:faker.lorem.sentence(),
       subheader_dummy: faker.lorem.sentence(),
-      
+      youtube_dummy:faker.internet.url(),
+      twitter_dummy:faker.internet.url(),
+      vimeo_dummy:faker.internet.url(),
+      codepen_dummy:faker.internet.url(),
+      spotify_url_dummy:faker.internet.url(),
+      soundcloud_url_dummy:faker.internet.url(),
+      other_url_dummy:faker.internet.url()
 
   }));
 }
