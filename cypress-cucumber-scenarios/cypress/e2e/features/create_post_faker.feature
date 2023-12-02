@@ -31,7 +31,7 @@ Examples:
      | Header               |	
      | Signup               |	 
 
-Scenario: As an admin user, I want to create a post with controled error
+Scenario: As an admin user, I want to create a post with controlled error
       Given I signin to Ghost 
       And I wait for 2 seconds
       Then I check dashboard URL
