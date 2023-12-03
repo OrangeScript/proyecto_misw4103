@@ -38,4 +38,8 @@ En el siguiente enlace podrá encontrar las ventajas y desventajas de las herram
 
 - [Video semana 6 - Youtube](https://youtu.be/URlHYNI8QCA)
 
+### Video Semana 8
+
+- [Video semana 8 - Youtube](https://youtu.be/3y8lXVTw5UE)
+
 
