@@ -37,7 +37,7 @@ When("I wait for {int} seconds", (time) => {
 
 When("I enter email {string}", (email) => {
    cy.get("form").within(() => {
-        ln.setUserName(locators.email_input, credentials.email);
+        ln.setUserName(locators.email_input, email);
         cy.wait(2000);
    });
    
@@ -149,3 +149,13 @@ When("I enter invalid string values to password input", () => {
   });
 });
 
+
+Then("I get retry button", () => {
+  cy.get('button[data-test-button="sign-in"] span[data-test-task-button-state="failure"]')
+  .should('exist') 
+});
+
+
+Then ('I get red incorrect form field', () => {
+  cy.get('div.form-group.error').should('exist');
+});
