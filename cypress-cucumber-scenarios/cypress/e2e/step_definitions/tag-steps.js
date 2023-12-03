@@ -74,7 +74,7 @@ When("I click on delete button", () => {
 })
 
 When("I click confirm the delete", () => {
-    let element = cy.get("button[data-test-button='delete-tag']");
+    let element = cy.get('button[data-test-button="confirm"]');
     element.click();
 });
 
